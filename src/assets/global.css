@@ -176,6 +176,25 @@ code {
   color: var(--text-secondary);
 }
 
+/* 侧边栏一级分类标题（操作流程 / 参考资料 / 框架待补） */
+.menu-category-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 14px 16px 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 1px;
+}
+
+.menu-category-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--info-light);
+}
+
 .menu-group-actions a {
   font-size: 11px;
   color: var(--text-placeholder);

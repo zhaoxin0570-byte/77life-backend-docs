@@ -90,6 +90,21 @@ export const modules = [
   ...framework.filter(m => !OVERRIDDEN_IDS.includes(m.id))
 ]
 
+// 侧边栏一级分类：按模块 status 自动分组
+//   active    → 操作流程（完整操作流程模块）
+//   reference → 参考资料（截图资料）
+//   planned   → 框架待补（章节待完善）
+// 模块内容补齐后将 status 改为 'active'，即自动进入「操作流程」分类
+const MODULE_GROUP_DEFS = [
+  { name: '操作流程', status: 'active' },
+  { name: '参考资料', status: 'reference' },
+  { name: '框架待补', status: 'planned' }
+]
+
+export const moduleGroups = MODULE_GROUP_DEFS
+  .map(def => ({ name: def.name, modules: modules.filter(m => m.status === def.status) }))
+  .filter(g => g.modules.length > 0)
+
 export function getModule(moduleId) {
   return modules.find(m => m.id === moduleId) || null
 }

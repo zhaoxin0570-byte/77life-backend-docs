@@ -20,43 +20,44 @@
             <a @click="collapseAll">收起</a>
           </span>
         </div>
-        <div class="menu-block" v-for="m in modules" :key="m.id">
-          <!-- 一级：模块（点整行展开/收起二级分类；无章节的模块点整行进入概览） -->
-          <div class="menu-row" :class="{ active: isModuleActive(m) }" @click="onModuleClick(m)">
-            <span class="module-link">
-              <span class="side-ico" v-html="iconSvg(m.icon)"></span>{{ m.name }}
-            </span>
-            <span v-if="m.status === 'planned'" class="badge-planned">待完善</span>
-            <span v-else-if="m.status === 'reference'" class="badge-reference">参考</span>
-            <span v-else class="menu-count">{{ m.chapters.length }} 章</span>
-            <span
-              v-if="m.chapters.length"
-              class="arrow-btn"
-              :class="{ open: isExpanded(m.id) }"
-              :title="isExpanded(m.id) ? '收起章节' : '展开章节'"
-            ><span class="arrow">▶</span></span>
-          </div>
-          <!-- 二级/三级：分组 → 章节（章节带 group 字段时按分组展示，否则平铺） -->
-          <div class="sub-chapters" v-if="m.chapters.length && isExpanded(m.id)">
-            <template v-for="(g, gi) in groupsOf(m)" :key="gi">
-              <div v-if="g.name" class="sub-group-title" @click="toggleGroup(m.id, g.name)">
-                <span class="group-arrow" :class="{ open: isGroupExpanded(m.id, g.name) }">▶</span>
-                <span class="group-name">{{ g.name }}</span>
-                <span class="group-count">{{ g.chapters.length }}</span>
-              </div>
-              <template v-if="!g.name || isGroupExpanded(m.id, g.name)">
-                <router-link
-                  v-for="ch in g.chapters"
-                  :key="ch.id"
-                  :to="`/doc/${m.id}/${ch.id}`"
-                  class="sub-item"
-                  :class="{ 'sub-sub': !!g.name }"
-                  active-class="active"
-                >{{ ch.title }}</router-link>
+        <template v-for="(g, gi) in moduleGroups" :key="g.name">
+          <div class="menu-category-title">{{ g.name }}</div>
+          <div class="menu-block" v-for="m in g.modules" :key="m.id">
+            <!-- 一级：模块（点整行展开/收起二级分类；无章节的模块点整行进入概览） -->
+            <div class="menu-row" :class="{ active: isModuleActive(m) }" @click="onModuleClick(m)">
+              <span class="module-link">
+                <span class="side-ico" v-html="iconSvg(m.icon)"></span>{{ m.name }}
+              </span>
+              <span class="menu-count">{{ m.chapters.length }} 章</span>
+              <span
+                v-if="m.chapters.length"
+                class="arrow-btn"
+                :class="{ open: isExpanded(m.id) }"
+                :title="isExpanded(m.id) ? '收起章节' : '展开章节'"
+              ><span class="arrow">▶</span></span>
+            </div>
+            <!-- 二级/三级：分组 → 章节（章节带 group 字段时按分组展示，否则平铺） -->
+            <div class="sub-chapters" v-if="m.chapters.length && isExpanded(m.id)">
+              <template v-for="(g2, gi2) in groupsOf(m)" :key="gi2">
+                <div v-if="g2.name" class="sub-group-title" @click="toggleGroup(m.id, g2.name)">
+                  <span class="group-arrow" :class="{ open: isGroupExpanded(m.id, g2.name) }">▶</span>
+                  <span class="group-name">{{ g2.name }}</span>
+                  <span class="group-count">{{ g2.chapters.length }}</span>
+                </div>
+                <template v-if="!g2.name || isGroupExpanded(m.id, g2.name)">
+                  <router-link
+                    v-for="ch in g2.chapters"
+                    :key="ch.id"
+                    :to="`/doc/${m.id}/${ch.id}`"
+                    class="sub-item"
+                    :class="{ 'sub-sub': !!g2.name }"
+                    active-class="active"
+                  >{{ ch.title }}</router-link>
+                </template>
               </template>
-            </template>
+            </div>
           </div>
-        </div>
+        </template>
       </nav>
       <div class="sidebar-footer">{{ systemMeta.version }} · {{ systemMeta.updatedAt }}</div>
     </aside>
@@ -84,13 +85,13 @@
 </template>
 
 <script>
-import { modules, systemMeta, getModule, chapterGroups } from '@/docs'
+import { modules, moduleGroups, systemMeta, getModule, chapterGroups } from '@/docs'
 import { iconSvg } from '@/docs/icons'
 
 export default {
   name: 'DocLayout',
   data() {
-    return { modules, systemMeta, expanded: {}, expandedGroups: {} }
+    return { modules, moduleGroups, systemMeta, expanded: {}, expandedGroups: {} }
   },
   computed: {
     currentModule() {
