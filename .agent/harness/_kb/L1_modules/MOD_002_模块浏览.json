@@ -1,0 +1,95 @@
+{
+  "module": {
+    "id": "MOD_002",
+    "type": "MODULE",
+    "layer": "L1",
+    "name": "模块与章节浏览",
+    "display_name": "模块浏览",
+    "category": "core_business",
+    "sort_order": 2,
+    "description": "侧边栏模块→章节两级分类导航 + 模块概览页章节目录",
+    "entry_points": [
+      {
+        "menu_path": "左侧导航 > 模块分类",
+        "icon": "grid"
+      }
+    ],
+    "status": "active",
+    "meta": {
+      "source_files": [
+        "src/views/DocLayout.vue",
+        "src/views/DocModule.vue"
+      ],
+      "confidence": 0.98,
+      "backfill_count": 0
+    }
+  },
+  "pages": [
+    {
+      "id": "PAGE_002",
+      "type": "PAGE",
+      "layer": "L1",
+      "name": "模块概览",
+      "module_id": "MOD_002",
+      "route": "/doc/:moduleId",
+      "component_path": "src/views/DocModule.vue",
+      "layout": "detail_layout",
+      "tabs": [],
+      "meta": {
+        "confidence": 0.98
+      }
+    },
+    {
+      "id": "PAGE_004",
+      "type": "PAGE",
+      "layer": "L1",
+      "name": "全局框架（布局）",
+      "module_id": "MOD_002",
+      "route": null,
+      "component_path": "src/views/DocLayout.vue",
+      "layout": "sidebar_layout",
+      "tabs": [],
+      "meta": {
+        "confidence": 0.98
+      }
+    }
+  ],
+  "functions": [
+    {
+      "id": "FN_004",
+      "name": "展开/收起模块章节",
+      "function_type": "query"
+    },
+    {
+      "id": "FN_005",
+      "name": "一键展开/收起全部分类",
+      "function_type": "config"
+    },
+    {
+      "id": "FN_006",
+      "name": "返回工作台",
+      "function_type": "query"
+    },
+    {
+      "id": "FN_007",
+      "name": "浏览章节目录",
+      "function_type": "read"
+    },
+    {
+      "id": "FN_008",
+      "name": "进入章节详情",
+      "function_type": "query"
+    },
+    {
+      "id": "FN_009",
+      "name": "查看待完善模块占位提示",
+      "function_type": "read"
+    }
+  ],
+  "entities": [],
+  "high_frequency_scenarios": [],
+  "extracted_at": "2026-10-14T13:37:19+08:00",
+  "source": "EXTRACT 合并提取（fastpath）",
+  "name": "模块与章节浏览",
+  "id": "MOD_002"
+}

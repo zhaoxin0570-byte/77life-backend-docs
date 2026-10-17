@@ -1,0 +1,83 @@
+{
+  "roles": [
+    {
+      "id": "ROLE_001",
+      "type": "ROLE",
+      "layer": "L0",
+      "name": "visitor",
+      "display_name": "文档读者（访客）",
+      "description": "任何打开文档站的人员，无需登录，全站只读",
+      "login_accessible": false,
+      "permission_scope": "all",
+      "inherits_from": null,
+      "meta": {
+        "confidence": 0.9
+      }
+    }
+  ],
+  "matrix": [
+    {
+      "role": "ROLE_001",
+      "function": "FN_001",
+      "level": "read"
+    },
+    {
+      "role": "ROLE_001",
+      "function": "FN_002",
+      "level": "read"
+    },
+    {
+      "role": "ROLE_001",
+      "function": "FN_003",
+      "level": "read"
+    },
+    {
+      "role": "ROLE_001",
+      "function": "FN_004",
+      "level": "read"
+    },
+    {
+      "role": "ROLE_001",
+      "function": "FN_006",
+      "level": "read"
+    },
+    {
+      "role": "ROLE_001",
+      "function": "FN_007",
+      "level": "read"
+    },
+    {
+      "role": "ROLE_001",
+      "function": "FN_008",
+      "level": "read"
+    },
+    {
+      "role": "ROLE_001",
+      "function": "FN_009",
+      "level": "read"
+    },
+    {
+      "role": "ROLE_001",
+      "function": "FN_010",
+      "level": "read"
+    },
+    {
+      "role": "ROLE_001",
+      "function": "FN_011",
+      "level": "read"
+    },
+    {
+      "role": "ROLE_001",
+      "function": "FN_012",
+      "level": "read"
+    },
+    {
+      "role": "ROLE_001",
+      "function": "FN_013",
+      "level": "read"
+    }
+  ],
+  "coverage": "12/18 functions with explicit permission",
+  "note": "文档站无登录体系，ROLE_001 访客对所有 read/query 功能可执行；create/update/config 类功能属维护者行为（源码操作），不面向访客",
+  "extracted_at": "2026-10-14T13:37:19+08:00"
+}

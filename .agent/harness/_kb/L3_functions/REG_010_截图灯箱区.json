@@ -1,0 +1,96 @@
+{
+  "region": {
+    "id": "REG_010",
+    "type": "REGION",
+    "layer": "L2",
+    "name": "截图灯箱区",
+    "page_id": "PAGE_003",
+    "module_id": "MOD_003",
+    "region_type": "modal",
+    "layout_position": "overlay",
+    "visible_conditions": [
+      {
+        "role": [
+          "ROLE_001"
+        ],
+        "state": null
+      }
+    ],
+    "meta": {
+      "confidence": 0.92
+    }
+  },
+  "functions": [
+    {
+      "id": "FN_012",
+      "type": "FUNCTION",
+      "layer": "L3",
+      "name": "点击截图查看大图（灯箱）",
+      "region_id": "REG_010",
+      "page_id": null,
+      "module_id": "MOD_003",
+      "function_type": "read",
+      "target_entity_id": "ENT_003",
+      "opens_page_id": null,
+      "preconditions": [],
+      "risk_level": "low",
+      "requires_confirmation": false,
+      "meta": {
+        "confidence": 0.9
+      }
+    }
+  ],
+  "elements": [
+    {
+      "id": "ELM_008",
+      "type": "ELEMENT",
+      "layer": "L3",
+      "name": "灯箱大图",
+      "element_type": "modal",
+      "label": "截图大图 + 「点击任意处或按 Esc 关闭」提示",
+      "region_id": "REG_010",
+      "function_id": "FN_012",
+      "selector": null,
+      "states": {
+        "normal": {
+          "enabled": true,
+          "visible": true
+        },
+        "disabled": {
+          "enabled": false,
+          "visible": true,
+          "condition": null
+        },
+        "hidden": {
+          "enabled": false,
+          "visible": false,
+          "condition": null
+        }
+      },
+      "tooltip": null,
+      "shortcut": null,
+      "meta": {
+        "confidence": 0.9
+      }
+    }
+  ],
+  "permissions": [
+    {
+      "triple_id": "TRIPLE_00105",
+      "subject_id": "ROLE_001",
+      "subject_type": "ROLE",
+      "predicate": "CAN_EXECUTE",
+      "object_id": "FN_012",
+      "object_type": "FUNCTION",
+      "properties": {
+        "level": "read"
+      },
+      "evidence_ids": [],
+      "extracted_at_layer": "L3",
+      "confidence": 0.9,
+      "created_at": "2026-10-14T13:35:20+08:00",
+      "dirty": false
+    }
+  ],
+  "extracted_at": "2026-10-14T13:37:19+08:00"
+}

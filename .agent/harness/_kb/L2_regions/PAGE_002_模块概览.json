@@ -1,0 +1,99 @@
+{
+  "page": {
+    "id": "PAGE_002",
+    "type": "PAGE",
+    "layer": "L1",
+    "name": "模块概览",
+    "module_id": "MOD_002",
+    "route": "/doc/:moduleId",
+    "component_path": "src/views/DocModule.vue",
+    "layout": "detail_layout",
+    "tabs": [],
+    "meta": {
+      "confidence": 0.98
+    }
+  },
+  "regions": [
+    {
+      "id": "REG_004",
+      "type": "REGION",
+      "layer": "L2",
+      "name": "模块头部区",
+      "page_id": "PAGE_002",
+      "module_id": "MOD_002",
+      "region_type": "detail_form",
+      "layout_position": "top",
+      "visible_conditions": [
+        {
+          "role": [
+            "ROLE_001"
+          ],
+          "state": null
+        }
+      ],
+      "meta": {
+        "confidence": 0.92
+      }
+    },
+    {
+      "id": "REG_005",
+      "type": "REGION",
+      "layer": "L2",
+      "name": "章节目录区",
+      "page_id": "PAGE_002",
+      "module_id": "MOD_002",
+      "region_type": "data_table",
+      "layout_position": "center",
+      "visible_conditions": [
+        {
+          "role": [
+            "ROLE_001"
+          ],
+          "state": null
+        }
+      ],
+      "meta": {
+        "confidence": 0.92
+      }
+    },
+    {
+      "id": "REG_006",
+      "type": "REGION",
+      "layer": "L2",
+      "name": "空状态提示区",
+      "page_id": "PAGE_002",
+      "module_id": "MOD_002",
+      "region_type": "detail_form",
+      "layout_position": "center",
+      "visible_conditions": [
+        {
+          "role": [
+            "ROLE_001"
+          ],
+          "state": null
+        }
+      ],
+      "meta": {
+        "confidence": 0.92
+      }
+    }
+  ],
+  "region_trigger_relations": [
+    {
+      "from": "REG_005",
+      "to": "FN_007",
+      "predicate": "HAS_FUNCTION"
+    },
+    {
+      "from": "REG_005",
+      "to": "FN_008",
+      "predicate": "HAS_FUNCTION"
+    },
+    {
+      "from": "REG_006",
+      "to": "FN_009",
+      "predicate": "HAS_FUNCTION"
+    }
+  ],
+  "extracted_at": "2026-10-14T13:37:19+08:00"
+}

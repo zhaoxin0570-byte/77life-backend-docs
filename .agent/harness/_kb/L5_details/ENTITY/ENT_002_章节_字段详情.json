@@ -1,0 +1,49 @@
+{
+  "entity": {
+    "id": "ENT_002",
+    "type": "ENTITY",
+    "layer": "L1",
+    "name": "Chapter",
+    "display_name": "章节",
+    "table_name": null,
+    "managed_by_module": "MOD_004",
+    "fields": [
+      {
+        "name": "id",
+        "label": "章节ID",
+        "type": "String",
+        "required": true,
+        "visible_in_form": true,
+        "visible_in_list": true
+      },
+      {
+        "name": "title",
+        "label": "章节标题",
+        "type": "String",
+        "required": true,
+        "visible_in_form": true,
+        "visible_in_list": true
+      },
+      {
+        "name": "summary",
+        "label": "章节简介",
+        "type": "String",
+        "required": false,
+        "visible_in_form": true,
+        "visible_in_list": true
+      },
+      {
+        "name": "steps",
+        "label": "步骤数组",
+        "type": "Array",
+        "required": true,
+        "visible_in_form": true,
+        "visible_in_list": false
+      }
+    ],
+    "meta": {
+      "confidence": 0.97
+    }
+  },
+  "extracted_at": "2026-10-14T13:37:19+08:00"
+}

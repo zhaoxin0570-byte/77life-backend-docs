@@ -1,0 +1,60 @@
+{
+  "function": {
+    "id": "FN_009",
+    "type": "FUNCTION",
+    "layer": "L3",
+    "name": "查看待完善模块占位提示",
+    "region_id": "REG_006",
+    "page_id": null,
+    "module_id": "MOD_002",
+    "function_type": "read",
+    "target_entity_id": "ENT_001",
+    "opens_page_id": null,
+    "preconditions": [],
+    "risk_level": "low",
+    "requires_confirmation": false,
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  "steps": [
+    {
+      "id": "STEP_012",
+      "type": "STEP",
+      "layer": "L4",
+      "name": "查看占位提示",
+      "function_id": "FN_009",
+      "step_index": 1,
+      "step_type": "feedback",
+      "action_type": null,
+      "target_element_id": null,
+      "description": "查看占位提示",
+      "expected_result": "显示「该模块文档待完善」与补充说明入口",
+      "next_step_ids": [
+        "STEP_013"
+      ],
+      "branch_on_condition": null,
+      "error_to_step_id": null,
+      "diagram_node_label": "查看占位提示",
+      "meta": {
+        "confidence": 0.9
+      }
+    }
+  ],
+  "flowchart": {
+    "type": "flowchart TD",
+    "nodes": [
+      {
+        "id": "STEP_012",
+        "label": "查看占位提示"
+      }
+    ],
+    "edges": [
+      {
+        "from": "STEP_012",
+        "to": "STEP_013"
+      }
+    ]
+  },
+  "extracted_at": "2026-10-14T13:37:19+08:00"
+}

@@ -1,0 +1,38 @@
+{
+  "docStats_formula": "由 modules 数组实时推导（index.js docStats）",
+  "content_modules": [
+    {
+      "id": "growth",
+      "name": "成长值模块",
+      "status": "active",
+      "chapters": 7,
+      "steps": 21,
+      "images": 23
+    },
+    {
+      "id": "finance",
+      "name": "财务",
+      "status": "active",
+      "chapters": 6,
+      "steps": 7,
+      "images": 12
+    },
+    {
+      "id": "hidden",
+      "name": "菜单隐藏需求",
+      "status": "reference",
+      "chapters": 13,
+      "steps": 39,
+      "images": 77
+    }
+  ],
+  "totals": {
+    "active_modules": 2,
+    "reference_modules": 1,
+    "chapters": 26,
+    "steps": 67,
+    "images": 112
+  },
+  "framework_placeholder_modules": 14,
+  "extracted_at": "2026-10-14T13:37:19+08:00"
+}

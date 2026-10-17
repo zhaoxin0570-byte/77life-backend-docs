@@ -1,0 +1,357 @@
+{
+  "elements": [
+    {
+      "id": "ELM_001",
+      "type": "ELEMENT",
+      "layer": "L3",
+      "name": "统计卡片",
+      "element_type": "stat_card",
+      "label": "统计卡片（已上线模块/章节总数/操作步骤/操作截图）",
+      "region_id": "REG_001",
+      "function_id": "FN_001",
+      "selector": null,
+      "states": {
+        "normal": {
+          "enabled": true,
+          "visible": true
+        },
+        "disabled": {
+          "enabled": false,
+          "visible": true,
+          "condition": null
+        },
+        "hidden": {
+          "enabled": false,
+          "visible": false,
+          "condition": null
+        }
+      },
+      "tooltip": null,
+      "shortcut": null,
+      "meta": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "ELM_002",
+      "type": "ELEMENT",
+      "layer": "L3",
+      "name": "模块进度表「查看」链接",
+      "element_type": "link",
+      "label": "查看",
+      "region_id": "REG_002",
+      "function_id": "FN_003",
+      "selector": null,
+      "states": {
+        "normal": {
+          "enabled": true,
+          "visible": true
+        },
+        "disabled": {
+          "enabled": false,
+          "visible": true,
+          "condition": null
+        },
+        "hidden": {
+          "enabled": false,
+          "visible": false,
+          "condition": null
+        }
+      },
+      "tooltip": null,
+      "shortcut": null,
+      "meta": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "ELM_003",
+      "type": "ELEMENT",
+      "layer": "L3",
+      "name": "侧边栏「工作台」入口",
+      "element_type": "menu_item",
+      "label": "工作台",
+      "region_id": "REG_012",
+      "function_id": "FN_006",
+      "selector": null,
+      "states": {
+        "normal": {
+          "enabled": true,
+          "visible": true
+        },
+        "disabled": {
+          "enabled": false,
+          "visible": true,
+          "condition": null
+        },
+        "hidden": {
+          "enabled": false,
+          "visible": false,
+          "condition": null
+        }
+      },
+      "tooltip": null,
+      "shortcut": null,
+      "meta": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "ELM_004",
+      "type": "ELEMENT",
+      "layer": "L3",
+      "name": "侧边栏模块行",
+      "element_type": "menu_item",
+      "label": "模块名称行（点击展开/收起章节）",
+      "region_id": "REG_012",
+      "function_id": "FN_004",
+      "selector": null,
+      "states": {
+        "normal": {
+          "enabled": true,
+          "visible": true
+        },
+        "disabled": {
+          "enabled": false,
+          "visible": true,
+          "condition": null
+        },
+        "hidden": {
+          "enabled": false,
+          "visible": false,
+          "condition": null
+        }
+      },
+      "tooltip": null,
+      "shortcut": null,
+      "meta": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "ELM_005",
+      "type": "ELEMENT",
+      "layer": "L3",
+      "name": "「展开」「收起」链接",
+      "element_type": "link",
+      "label": "展开 / 收起",
+      "region_id": "REG_012",
+      "function_id": "FN_005",
+      "selector": null,
+      "states": {
+        "normal": {
+          "enabled": true,
+          "visible": true
+        },
+        "disabled": {
+          "enabled": false,
+          "visible": true,
+          "condition": null
+        },
+        "hidden": {
+          "enabled": false,
+          "visible": false,
+          "condition": null
+        }
+      },
+      "tooltip": null,
+      "shortcut": null,
+      "meta": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "ELM_006",
+      "type": "ELEMENT",
+      "layer": "L3",
+      "name": "章节行",
+      "element_type": "link",
+      "label": "章节标题行（序号+标题+简介+步骤数）",
+      "region_id": "REG_005",
+      "function_id": "FN_008",
+      "selector": null,
+      "states": {
+        "normal": {
+          "enabled": true,
+          "visible": true
+        },
+        "disabled": {
+          "enabled": false,
+          "visible": true,
+          "condition": null
+        },
+        "hidden": {
+          "enabled": false,
+          "visible": false,
+          "condition": null
+        }
+      },
+      "tooltip": null,
+      "shortcut": null,
+      "meta": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "ELM_007",
+      "type": "ELEMENT",
+      "layer": "L3",
+      "name": "步骤截图",
+      "element_type": "img",
+      "label": "操作截图（loading=lazy，限宽显示）",
+      "region_id": "REG_008",
+      "function_id": "FN_011",
+      "selector": null,
+      "states": {
+        "normal": {
+          "enabled": true,
+          "visible": true
+        },
+        "disabled": {
+          "enabled": false,
+          "visible": true,
+          "condition": null
+        },
+        "hidden": {
+          "enabled": false,
+          "visible": false,
+          "condition": null
+        }
+      },
+      "tooltip": null,
+      "shortcut": null,
+      "meta": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "ELM_008",
+      "type": "ELEMENT",
+      "layer": "L3",
+      "name": "灯箱大图",
+      "element_type": "modal",
+      "label": "截图大图 + 「点击任意处或按 Esc 关闭」提示",
+      "region_id": "REG_010",
+      "function_id": "FN_012",
+      "selector": null,
+      "states": {
+        "normal": {
+          "enabled": true,
+          "visible": true
+        },
+        "disabled": {
+          "enabled": false,
+          "visible": true,
+          "condition": null
+        },
+        "hidden": {
+          "enabled": false,
+          "visible": false,
+          "condition": null
+        }
+      },
+      "tooltip": null,
+      "shortcut": null,
+      "meta": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "ELM_009",
+      "type": "ELEMENT",
+      "layer": "L3",
+      "name": "上一节/下一节按钮",
+      "element_type": "button",
+      "label": "上一节 / 下一节",
+      "region_id": "REG_009",
+      "function_id": "FN_013",
+      "selector": null,
+      "states": {
+        "normal": {
+          "enabled": true,
+          "visible": true
+        },
+        "disabled": {
+          "enabled": false,
+          "visible": true,
+          "condition": null
+        },
+        "hidden": {
+          "enabled": false,
+          "visible": false,
+          "condition": null
+        }
+      },
+      "tooltip": null,
+      "shortcut": null,
+      "meta": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "ELM_010",
+      "type": "ELEMENT",
+      "layer": "L3",
+      "name": "「返回文档首页」按钮",
+      "element_type": "button",
+      "label": "返回文档首页",
+      "region_id": "REG_006",
+      "function_id": "FN_009",
+      "selector": null,
+      "states": {
+        "normal": {
+          "enabled": true,
+          "visible": true
+        },
+        "disabled": {
+          "enabled": false,
+          "visible": true,
+          "condition": null
+        },
+        "hidden": {
+          "enabled": false,
+          "visible": false,
+          "condition": null
+        }
+      },
+      "tooltip": null,
+      "shortcut": null,
+      "meta": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "ELM_011",
+      "type": "ELEMENT",
+      "layer": "L3",
+      "name": "「返回《模块》章节列表」按钮",
+      "element_type": "button",
+      "label": "返回《XX》章节列表",
+      "region_id": "REG_008",
+      "function_id": "FN_010",
+      "selector": null,
+      "states": {
+        "normal": {
+          "enabled": true,
+          "visible": true
+        },
+        "disabled": {
+          "enabled": false,
+          "visible": true,
+          "condition": null
+        },
+        "hidden": {
+          "enabled": false,
+          "visible": false,
+          "condition": null
+        }
+      },
+      "tooltip": null,
+      "shortcut": null,
+      "meta": {
+        "confidence": 0.9
+      }
+    }
+  ],
+  "extracted_at": "2026-10-14T13:37:19+08:00"
+}

@@ -1,0 +1,53 @@
+{
+  "function": {
+    "id": "FN_008",
+    "type": "FUNCTION",
+    "layer": "L3",
+    "name": "进入章节详情",
+    "region_id": "REG_005",
+    "page_id": null,
+    "module_id": "MOD_002",
+    "function_type": "query",
+    "target_entity_id": "ENT_002",
+    "opens_page_id": "PAGE_003",
+    "preconditions": [],
+    "risk_level": "low",
+    "requires_confirmation": false,
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  "steps": [
+    {
+      "id": "STEP_011",
+      "type": "STEP",
+      "layer": "L4",
+      "name": "点击章节目录行",
+      "function_id": "FN_008",
+      "step_index": 1,
+      "step_type": "navigation",
+      "action_type": "click",
+      "target_element_id": "ELM_006",
+      "description": "点击章节目录行",
+      "expected_result": "进入该章节的详情页",
+      "next_step_ids": [],
+      "branch_on_condition": null,
+      "error_to_step_id": null,
+      "diagram_node_label": "点击章节目录行",
+      "meta": {
+        "confidence": 0.9
+      }
+    }
+  ],
+  "flowchart": {
+    "type": "flowchart TD",
+    "nodes": [
+      {
+        "id": "STEP_011",
+        "label": "点击章节目录行"
+      }
+    ],
+    "edges": []
+  },
+  "extracted_at": "2026-10-14T13:37:19+08:00"
+}

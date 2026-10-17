@@ -1,0 +1,660 @@
+[
+  {
+    "evidence_id": "EVD_00001",
+    "layer": "L1",
+    "source_type": "frontend_file",
+    "file_path": "src/views/DocHome.vue",
+    "file_type": ".vue",
+    "line_start": 3,
+    "line_end": 33,
+    "code_snippet": "统计卡片区：stats.active/chapters/steps/images 四张卡",
+    "raw_extraction": {
+      "extracted_fields": [
+        "stat cards",
+        "docStats fields"
+      ],
+      "confidence_per_field": {
+        "stat cards": 0.99,
+        "docStats fields": 0.99
+      }
+    },
+    "supporting_node_ids": [
+      "REG_001",
+      "ELM_001",
+      "FN_001"
+    ],
+    "supporting_triple_ids": [],
+    "extracted_at": "2026-10-14T13:35:20+08:00",
+    "verification_status": "single_source",
+    "cross_verified_with": []
+  },
+  {
+    "evidence_id": "EVD_00002",
+    "layer": "L1",
+    "source_type": "frontend_file",
+    "file_path": "src/views/DocHome.vue",
+    "file_type": ".vue",
+    "line_start": 38,
+    "line_end": 63,
+    "code_snippet": "模块进度表：模块/状态/章节/说明/操作(查看) 五列",
+    "raw_extraction": {
+      "extracted_fields": [
+        "progress table columns",
+        "查看 link"
+      ],
+      "confidence_per_field": {
+        "progress table columns": 0.99,
+        "查看 link": 0.99
+      }
+    },
+    "supporting_node_ids": [
+      "REG_002",
+      "ELM_002",
+      "FN_002",
+      "FN_003"
+    ],
+    "supporting_triple_ids": [],
+    "extracted_at": "2026-10-14T13:35:20+08:00",
+    "verification_status": "single_source",
+    "cross_verified_with": []
+  },
+  {
+    "evidence_id": "EVD_00003",
+    "layer": "L1",
+    "source_type": "frontend_file",
+    "file_path": "src/views/DocHome.vue",
+    "file_type": ".vue",
+    "line_start": 67,
+    "line_end": 73,
+    "code_snippet": "关于本文档系统说明面板",
+    "raw_extraction": {
+      "extracted_fields": [
+        "about panel"
+      ],
+      "confidence_per_field": {
+        "about panel": 0.95
+      }
+    },
+    "supporting_node_ids": [
+      "REG_003"
+    ],
+    "supporting_triple_ids": [],
+    "extracted_at": "2026-10-14T13:35:20+08:00",
+    "verification_status": "single_source",
+    "cross_verified_with": []
+  },
+  {
+    "evidence_id": "EVD_00004",
+    "layer": "L1",
+    "source_type": "frontend_file",
+    "file_path": "src/views/DocHome.vue",
+    "file_type": ".vue",
+    "line_start": 77,
+    "line_end": 85,
+    "code_snippet": "import { modules, docStats } from '@/docs'",
+    "raw_extraction": {
+      "extracted_fields": [
+        "data source"
+      ],
+      "confidence_per_field": {
+        "data source": 0.99
+      }
+    },
+    "supporting_node_ids": [
+      "MOD_001"
+    ],
+    "supporting_triple_ids": [],
+    "extracted_at": "2026-10-14T13:35:20+08:00",
+    "verification_status": "single_source",
+    "cross_verified_with": []
+  },
+  {
+    "evidence_id": "EVD_00005",
+    "layer": "L2",
+    "source_type": "frontend_file",
+    "file_path": "src/views/DocLayout.vue",
+    "file_type": ".vue",
+    "line_start": 12,
+    "line_end": 50,
+    "code_snippet": "侧边栏菜单：工作台入口 + 模块分类两级（模块行/章节行/展开收起箭头）",
+    "raw_extraction": {
+      "extracted_fields": [
+        "sidebar menu",
+        "module row",
+        "chapter links",
+        "expand/collapse"
+      ],
+      "confidence_per_field": {
+        "sidebar menu": 0.99,
+        "module row": 0.99,
+        "chapter links": 0.99,
+        "expand/collapse": 0.99
+      }
+    },
+    "supporting_node_ids": [
+      "REG_012",
+      "ELM_003",
+      "ELM_004",
+      "ELM_005",
+      "FN_004",
+      "FN_005",
+      "FN_006"
+    ],
+    "supporting_triple_ids": [],
+    "extracted_at": "2026-10-14T13:35:20+08:00",
+    "verification_status": "single_source",
+    "cross_verified_with": []
+  },
+  {
+    "evidence_id": "EVD_00006",
+    "layer": "L2",
+    "source_type": "frontend_file",
+    "file_path": "src/views/DocLayout.vue",
+    "file_type": ".vue",
+    "line_start": 56,
+    "line_end": 67,
+    "code_snippet": "面包屑：工作台 / 模块名 / 章节名",
+    "raw_extraction": {
+      "extracted_fields": [
+        "breadcrumb"
+      ],
+      "confidence_per_field": {
+        "breadcrumb": 0.95
+      }
+    },
+    "supporting_node_ids": [
+      "REG_013"
+    ],
+    "supporting_triple_ids": [],
+    "extracted_at": "2026-10-14T13:35:20+08:00",
+    "verification_status": "single_source",
+    "cross_verified_with": []
+  },
+  {
+    "evidence_id": "EVD_00007",
+    "layer": "L2",
+    "source_type": "frontend_file",
+    "file_path": "src/views/DocLayout.vue",
+    "file_type": ".vue",
+    "line_start": 102,
+    "line_end": 137,
+    "code_snippet": "methods: toggle/expandAll/collapseAll/onModuleClick/syncExpand",
+    "raw_extraction": {
+      "extracted_fields": [
+        "expand collapse logic",
+        "module click routing"
+      ],
+      "confidence_per_field": {
+        "expand collapse logic": 0.95,
+        "module click routing": 0.95
+      }
+    },
+    "supporting_node_ids": [
+      "FN_004",
+      "FN_005"
+    ],
+    "supporting_triple_ids": [],
+    "extracted_at": "2026-10-14T13:35:20+08:00",
+    "verification_status": "single_source",
+    "cross_verified_with": []
+  },
+  {
+    "evidence_id": "EVD_00008",
+    "layer": "L2",
+    "source_type": "frontend_file",
+    "file_path": "src/views/DocModule.vue",
+    "file_type": ".vue",
+    "line_start": 3,
+    "line_end": 10,
+    "code_snippet": "模块头部：名称 + 待完善/参考资料徽章 + summary",
+    "raw_extraction": {
+      "extracted_fields": [
+        "module header",
+        "status badge"
+      ],
+      "confidence_per_field": {
+        "module header": 0.98,
+        "status badge": 0.98
+      }
+    },
+    "supporting_node_ids": [
+      "REG_004"
+    ],
+    "supporting_triple_ids": [],
+    "extracted_at": "2026-10-14T13:35:20+08:00",
+    "verification_status": "single_source",
+    "cross_verified_with": []
+  },
+  {
+    "evidence_id": "EVD_00009",
+    "layer": "L2",
+    "source_type": "frontend_file",
+    "file_path": "src/views/DocModule.vue",
+    "file_type": ".vue",
+    "line_start": 15,
+    "line_end": 32,
+    "code_snippet": "章节目录：序号/标题/简介/步骤数，router-link 跳详情",
+    "raw_extraction": {
+      "extracted_fields": [
+        "chapter rows",
+        "steps count"
+      ],
+      "confidence_per_field": {
+        "chapter rows": 0.99,
+        "steps count": 0.99
+      }
+    },
+    "supporting_node_ids": [
+      "REG_005",
+      "ELM_006",
+      "FN_007",
+      "FN_008"
+    ],
+    "supporting_triple_ids": [],
+    "extracted_at": "2026-10-14T13:35:20+08:00",
+    "verification_status": "single_source",
+    "cross_verified_with": []
+  },
+  {
+    "evidence_id": "EVD_00010",
+    "layer": "L2",
+    "source_type": "frontend_file",
+    "file_path": "src/views/DocModule.vue",
+    "file_type": ".vue",
+    "line_start": 35,
+    "line_end": 40,
+    "code_snippet": "空状态：该模块文档待完善 + 返回文档首页",
+    "raw_extraction": {
+      "extracted_fields": [
+        "empty state"
+      ],
+      "confidence_per_field": {
+        "empty state": 0.95
+      }
+    },
+    "supporting_node_ids": [
+      "REG_006",
+      "ELM_010",
+      "FN_009"
+    ],
+    "supporting_triple_ids": [],
+    "extracted_at": "2026-10-14T13:35:20+08:00",
+    "verification_status": "single_source",
+    "cross_verified_with": []
+  },
+  {
+    "evidence_id": "EVD_00011",
+    "layer": "L2",
+    "source_type": "frontend_file",
+    "file_path": "src/views/DocChapter.vue",
+    "file_type": ".vue",
+    "line_start": 2,
+    "line_end": 10,
+    "code_snippet": "章节头部：标题 + 第 N 章 + summary",
+    "raw_extraction": {
+      "extracted_fields": [
+        "chapter header"
+      ],
+      "confidence_per_field": {
+        "chapter header": 0.98
+      }
+    },
+    "supporting_node_ids": [
+      "REG_007"
+    ],
+    "supporting_triple_ids": [],
+    "extracted_at": "2026-10-14T13:35:20+08:00",
+    "verification_status": "single_source",
+    "cross_verified_with": []
+  },
+  {
+    "evidence_id": "EVD_00012",
+    "layer": "L3",
+    "source_type": "frontend_file",
+    "file_path": "src/views/DocChapter.vue",
+    "file_type": ".vue",
+    "line_start": 13,
+    "line_end": 34,
+    "code_snippet": "步骤内容：序号/标题/菜单路径 code/desc/points；figure+img(loading=lazy)+figcaption 图注",
+    "raw_extraction": {
+      "extracted_fields": [
+        "step fields",
+        "menu path",
+        "points",
+        "figure img"
+      ],
+      "confidence_per_field": {
+        "step fields": 0.99,
+        "menu path": 0.99,
+        "points": 0.99,
+        "figure img": 0.99
+      }
+    },
+    "supporting_node_ids": [
+      "REG_008",
+      "ELM_007",
+      "FN_010",
+      "FN_011"
+    ],
+    "supporting_triple_ids": [],
+    "extracted_at": "2026-10-14T13:35:20+08:00",
+    "verification_status": "single_source",
+    "cross_verified_with": []
+  },
+  {
+    "evidence_id": "EVD_00013",
+    "layer": "L3",
+    "source_type": "frontend_file",
+    "file_path": "src/views/DocChapter.vue",
+    "file_type": ".vue",
+    "line_start": 64,
+    "line_end": 68,
+    "code_snippet": "灯箱：lightboxImg + 点击任意处或按 Esc 关闭",
+    "raw_extraction": {
+      "extracted_fields": [
+        "lightbox"
+      ],
+      "confidence_per_field": {
+        "lightbox": 0.98
+      }
+    },
+    "supporting_node_ids": [
+      "REG_010",
+      "ELM_008",
+      "FN_012"
+    ],
+    "supporting_triple_ids": [],
+    "extracted_at": "2026-10-14T13:35:20+08:00",
+    "verification_status": "single_source",
+    "cross_verified_with": []
+  },
+  {
+    "evidence_id": "EVD_00014",
+    "layer": "L3",
+    "source_type": "frontend_file",
+    "file_path": "src/views/DocChapter.vue",
+    "file_type": ".vue",
+    "line_start": 44,
+    "line_end": 56,
+    "code_snippet": "上一节/下一节导航（跨模块连续）",
+    "raw_extraction": {
+      "extracted_fields": [
+        "prev next nav"
+      ],
+      "confidence_per_field": {
+        "prev next nav": 0.98
+      }
+    },
+    "supporting_node_ids": [
+      "REG_009",
+      "ELM_009",
+      "FN_013"
+    ],
+    "supporting_triple_ids": [],
+    "extracted_at": "2026-10-14T13:35:20+08:00",
+    "verification_status": "single_source",
+    "cross_verified_with": []
+  },
+  {
+    "evidence_id": "EVD_00015",
+    "layer": "L3",
+    "source_type": "frontend_file",
+    "file_path": "src/views/DocChapter.vue",
+    "file_type": ".vue",
+    "line_start": 85,
+    "line_end": 121,
+    "code_snippet": "computed: module/chapter/prev/next（flatIndex 跨模块）",
+    "raw_extraction": {
+      "extracted_fields": [
+        "cross-module nav logic"
+      ],
+      "confidence_per_field": {
+        "cross-module nav logic": 0.95
+      }
+    },
+    "supporting_node_ids": [
+      "FN_013"
+    ],
+    "supporting_triple_ids": [],
+    "extracted_at": "2026-10-14T13:35:20+08:00",
+    "verification_status": "single_source",
+    "cross_verified_with": []
+  },
+  {
+    "evidence_id": "EVD_00016",
+    "layer": "L1",
+    "source_type": "frontend_file",
+    "file_path": "src/docs/index.js",
+    "file_type": ".js",
+    "line_start": 19,
+    "line_end": 25,
+    "code_snippet": "systemMeta: system/title/subtitle/version/updatedAt",
+    "raw_extraction": {
+      "extracted_fields": [
+        "systemMeta fields"
+      ],
+      "confidence_per_field": {
+        "systemMeta fields": 0.99
+      }
+    },
+    "supporting_node_ids": [
+      "ENT_004"
+    ],
+    "supporting_triple_ids": [],
+    "extracted_at": "2026-10-14T13:35:20+08:00",
+    "verification_status": "single_source",
+    "cross_verified_with": []
+  },
+  {
+    "evidence_id": "EVD_00017",
+    "layer": "L1",
+    "source_type": "frontend_file",
+    "file_path": "src/docs/index.js",
+    "file_type": ".js",
+    "line_start": 30,
+    "line_end": 41,
+    "code_snippet": "modules 数组 + getModule + allChapters",
+    "raw_extraction": {
+      "extracted_fields": [
+        "module registry",
+        "chapter flatten"
+      ],
+      "confidence_per_field": {
+        "module registry": 0.99,
+        "chapter flatten": 0.99
+      }
+    },
+    "supporting_node_ids": [
+      "ENT_001",
+      "ENT_002"
+    ],
+    "supporting_triple_ids": [],
+    "extracted_at": "2026-10-14T13:35:20+08:00",
+    "verification_status": "single_source",
+    "cross_verified_with": []
+  },
+  {
+    "evidence_id": "EVD_00018",
+    "layer": "L1",
+    "source_type": "frontend_file",
+    "file_path": "src/docs/index.js",
+    "file_type": ".js",
+    "line_start": 48,
+    "line_end": 66,
+    "code_snippet": "docStats 由 modules 推导（含 images 计数）",
+    "raw_extraction": {
+      "extracted_fields": [
+        "docStats derivation"
+      ],
+      "confidence_per_field": {
+        "docStats derivation": 0.99
+      }
+    },
+    "supporting_node_ids": [
+      "ENT_005",
+      "FN_001"
+    ],
+    "supporting_triple_ids": [],
+    "extracted_at": "2026-10-14T13:35:20+08:00",
+    "verification_status": "single_source",
+    "cross_verified_with": []
+  },
+  {
+    "evidence_id": "EVD_00019",
+    "layer": "L1",
+    "source_type": "frontend_file",
+    "file_path": "src/docs/growth.js",
+    "file_type": ".js",
+    "line_start": 27,
+    "line_end": 80,
+    "code_snippet": "chapters[].steps[] 结构：id/title/menu/desc/points/images",
+    "raw_extraction": {
+      "extracted_fields": [
+        "step schema"
+      ],
+      "confidence_per_field": {
+        "step schema": 0.99
+      }
+    },
+    "supporting_node_ids": [
+      "ENT_003"
+    ],
+    "supporting_triple_ids": [],
+    "extracted_at": "2026-10-14T13:35:20+08:00",
+    "verification_status": "single_source",
+    "cross_verified_with": []
+  },
+  {
+    "evidence_id": "EVD_00020",
+    "layer": "L1",
+    "source_type": "doc_file",
+    "file_path": "README.md",
+    "file_type": ".md",
+    "line_start": 50,
+    "line_end": 86,
+    "code_snippet": "如何添加新模块：复制 growth.js 改 default 导出 + index.js 注册；截图放 src/assets/docs/",
+    "raw_extraction": {
+      "extracted_fields": [
+        "add module flow",
+        "screenshot placement"
+      ],
+      "confidence_per_field": {
+        "add module flow": 0.95,
+        "screenshot placement": 0.95
+      }
+    },
+    "supporting_node_ids": [
+      "FN_014",
+      "FN_015",
+      "FN_016"
+    ],
+    "supporting_triple_ids": [],
+    "extracted_at": "2026-10-14T13:35:20+08:00",
+    "verification_status": "single_source",
+    "cross_verified_with": []
+  },
+  {
+    "evidence_id": "EVD_00021",
+    "layer": "L1",
+    "source_type": "frontend_file",
+    "file_path": "一键启动.bat",
+    "file_type": ".bat",
+    "line_start": 19,
+    "line_end": 33,
+    "code_snippet": "依赖缺失时 npm install；npm run dev 启动",
+    "raw_extraction": {
+      "extracted_fields": [
+        "dev startup"
+      ],
+      "confidence_per_field": {
+        "dev startup": 0.95
+      }
+    },
+    "supporting_node_ids": [
+      "FN_017"
+    ],
+    "supporting_triple_ids": [],
+    "extracted_at": "2026-10-14T13:35:20+08:00",
+    "verification_status": "single_source",
+    "cross_verified_with": []
+  },
+  {
+    "evidence_id": "EVD_00022",
+    "layer": "L1",
+    "source_type": "doc_file",
+    "file_path": "README.md",
+    "file_type": ".md",
+    "line_start": 111,
+    "line_end": 125,
+    "code_snippet": "npm run build 产物 dist/，iframe 嵌入或路由合并",
+    "raw_extraction": {
+      "extracted_fields": [
+        "build deploy"
+      ],
+      "confidence_per_field": {
+        "build deploy": 0.95
+      }
+    },
+    "supporting_node_ids": [
+      "FN_018"
+    ],
+    "supporting_triple_ids": [],
+    "extracted_at": "2026-10-14T13:35:20+08:00",
+    "verification_status": "single_source",
+    "cross_verified_with": []
+  },
+  {
+    "evidence_id": "EVD_00023",
+    "layer": "L0",
+    "source_type": "frontend_file",
+    "file_path": "src/main.js",
+    "file_type": ".js",
+    "line_start": 1,
+    "line_end": 6,
+    "code_snippet": "createApp(App).use(router).mount，无任何鉴权中间件",
+    "raw_extraction": {
+      "extracted_fields": [
+        "no auth"
+      ],
+      "confidence_per_field": {
+        "no auth": 0.99
+      }
+    },
+    "supporting_node_ids": [
+      "ROLE_001"
+    ],
+    "supporting_triple_ids": [],
+    "extracted_at": "2026-10-14T13:35:20+08:00",
+    "verification_status": "single_source",
+    "cross_verified_with": []
+  },
+  {
+    "evidence_id": "EVD_00024",
+    "layer": "L1",
+    "source_type": "frontend_file",
+    "file_path": "src/router/index.js",
+    "file_type": ".js",
+    "line_start": 3,
+    "line_end": 26,
+    "code_snippet": "三条路由：/ 工作台、/doc/:moduleId、/doc/:moduleId/:chapterId；无守卫",
+    "raw_extraction": {
+      "extracted_fields": [
+        "routes",
+        "no guard"
+      ],
+      "confidence_per_field": {
+        "routes": 0.99,
+        "no guard": 0.99
+      }
+    },
+    "supporting_node_ids": [
+      "PAGE_001",
+      "PAGE_002",
+      "PAGE_003"
+    ],
+    "supporting_triple_ids": [],
+    "extracted_at": "2026-10-14T13:35:20+08:00",
+    "verification_status": "single_source",
+    "cross_verified_with": []
+  }
+]

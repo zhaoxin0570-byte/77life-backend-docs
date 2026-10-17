@@ -1,0 +1,84 @@
+{
+  "function": {
+    "id": "FN_001",
+    "type": "FUNCTION",
+    "layer": "L3",
+    "name": "查看文档统计",
+    "region_id": "REG_001",
+    "page_id": null,
+    "module_id": "MOD_001",
+    "function_type": "read",
+    "target_entity_id": "ENT_005",
+    "opens_page_id": null,
+    "preconditions": [],
+    "risk_level": "low",
+    "requires_confirmation": false,
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  "steps": [
+    {
+      "id": "STEP_001",
+      "type": "STEP",
+      "layer": "L4",
+      "name": "点击侧边栏「工作台」",
+      "function_id": "FN_001",
+      "step_index": 1,
+      "step_type": "navigation",
+      "action_type": "click",
+      "target_element_id": "ELM_003",
+      "description": "点击侧边栏「工作台」",
+      "expected_result": "进入文档站首页，看到四张统计卡",
+      "next_step_ids": [
+        "STEP_002"
+      ],
+      "branch_on_condition": null,
+      "error_to_step_id": null,
+      "diagram_node_label": "点击侧边栏「工作台」",
+      "meta": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "STEP_002",
+      "type": "STEP",
+      "layer": "L4",
+      "name": "查看统计卡数值",
+      "function_id": "FN_001",
+      "step_index": 2,
+      "step_type": "feedback",
+      "action_type": null,
+      "target_element_id": null,
+      "description": "查看统计卡数值",
+      "expected_result": "已上线模块/章节总数/操作步骤/操作截图四个数字随内容自动更新",
+      "next_step_ids": [],
+      "branch_on_condition": null,
+      "error_to_step_id": null,
+      "diagram_node_label": "查看统计卡数值",
+      "meta": {
+        "confidence": 0.9
+      }
+    }
+  ],
+  "flowchart": {
+    "type": "flowchart TD",
+    "nodes": [
+      {
+        "id": "STEP_001",
+        "label": "点击侧边栏「工作台」"
+      },
+      {
+        "id": "STEP_002",
+        "label": "查看统计卡数值"
+      }
+    ],
+    "edges": [
+      {
+        "from": "STEP_001",
+        "to": "STEP_002"
+      }
+    ]
+  },
+  "extracted_at": "2026-10-14T13:37:19+08:00"
+}

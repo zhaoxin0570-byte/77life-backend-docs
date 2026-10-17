@@ -1,0 +1,53 @@
+{
+  "function": {
+    "id": "FN_018",
+    "type": "FUNCTION",
+    "layer": "L3",
+    "name": "构建与部署",
+    "region_id": null,
+    "page_id": null,
+    "module_id": "MOD_004",
+    "function_type": "config",
+    "target_entity_id": null,
+    "opens_page_id": null,
+    "preconditions": [],
+    "risk_level": "medium",
+    "requires_confirmation": false,
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  "steps": [
+    {
+      "id": "STEP_024",
+      "type": "STEP",
+      "layer": "L4",
+      "name": "执行 npm run build",
+      "function_id": "FN_018",
+      "step_index": 1,
+      "step_type": "action",
+      "action_type": null,
+      "target_element_id": null,
+      "description": "执行 npm run build",
+      "expected_result": "产物在 dist/，可放任意子目录或 iframe 嵌入后台",
+      "next_step_ids": [],
+      "branch_on_condition": null,
+      "error_to_step_id": null,
+      "diagram_node_label": "执行 npm run build",
+      "meta": {
+        "confidence": 0.9
+      }
+    }
+  ],
+  "flowchart": {
+    "type": "flowchart TD",
+    "nodes": [
+      {
+        "id": "STEP_024",
+        "label": "执行 npm run build"
+      }
+    ],
+    "edges": []
+  },
+  "extracted_at": "2026-10-14T13:37:19+08:00"
+}

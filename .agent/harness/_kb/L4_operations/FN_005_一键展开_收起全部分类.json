@@ -1,0 +1,53 @@
+{
+  "function": {
+    "id": "FN_005",
+    "type": "FUNCTION",
+    "layer": "L3",
+    "name": "一键展开/收起全部分类",
+    "region_id": "REG_012",
+    "page_id": null,
+    "module_id": "MOD_002",
+    "function_type": "config",
+    "target_entity_id": "ENT_002",
+    "opens_page_id": null,
+    "preconditions": [],
+    "risk_level": "low",
+    "requires_confirmation": false,
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  "steps": [
+    {
+      "id": "STEP_007",
+      "type": "STEP",
+      "layer": "L4",
+      "name": "点击「展开」或「收起」",
+      "function_id": "FN_005",
+      "step_index": 1,
+      "step_type": "action",
+      "action_type": "click",
+      "target_element_id": "ELM_005",
+      "description": "点击「展开」或「收起」",
+      "expected_result": "全部分类一次性展开或收起",
+      "next_step_ids": [],
+      "branch_on_condition": null,
+      "error_to_step_id": null,
+      "diagram_node_label": "点击「展开」或「收起」",
+      "meta": {
+        "confidence": 0.9
+      }
+    }
+  ],
+  "flowchart": {
+    "type": "flowchart TD",
+    "nodes": [
+      {
+        "id": "STEP_007",
+        "label": "点击「展开」或「收起」"
+      }
+    ],
+    "edges": []
+  },
+  "extracted_at": "2026-10-14T13:37:19+08:00"
+}

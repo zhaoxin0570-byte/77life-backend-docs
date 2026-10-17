@@ -1,0 +1,162 @@
+{
+  "region": {
+    "id": "REG_008",
+    "type": "REGION",
+    "layer": "L2",
+    "name": "步骤内容区",
+    "page_id": "PAGE_003",
+    "module_id": "MOD_003",
+    "region_type": "detail_form",
+    "layout_position": "center",
+    "visible_conditions": [
+      {
+        "role": [
+          "ROLE_001"
+        ],
+        "state": null
+      }
+    ],
+    "meta": {
+      "confidence": 0.92
+    }
+  },
+  "functions": [
+    {
+      "id": "FN_010",
+      "type": "FUNCTION",
+      "layer": "L3",
+      "name": "阅读步骤操作说明",
+      "region_id": "REG_008",
+      "page_id": null,
+      "module_id": "MOD_003",
+      "function_type": "read",
+      "target_entity_id": "ENT_003",
+      "opens_page_id": null,
+      "preconditions": [],
+      "risk_level": "low",
+      "requires_confirmation": false,
+      "meta": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "FN_011",
+      "type": "FUNCTION",
+      "layer": "L3",
+      "name": "查看步骤操作截图",
+      "region_id": "REG_008",
+      "page_id": null,
+      "module_id": "MOD_003",
+      "function_type": "read",
+      "target_entity_id": "ENT_003",
+      "opens_page_id": null,
+      "preconditions": [],
+      "risk_level": "low",
+      "requires_confirmation": false,
+      "meta": {
+        "confidence": 0.9
+      }
+    }
+  ],
+  "elements": [
+    {
+      "id": "ELM_007",
+      "type": "ELEMENT",
+      "layer": "L3",
+      "name": "步骤截图",
+      "element_type": "img",
+      "label": "操作截图（loading=lazy，限宽显示）",
+      "region_id": "REG_008",
+      "function_id": "FN_011",
+      "selector": null,
+      "states": {
+        "normal": {
+          "enabled": true,
+          "visible": true
+        },
+        "disabled": {
+          "enabled": false,
+          "visible": true,
+          "condition": null
+        },
+        "hidden": {
+          "enabled": false,
+          "visible": false,
+          "condition": null
+        }
+      },
+      "tooltip": null,
+      "shortcut": null,
+      "meta": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "ELM_011",
+      "type": "ELEMENT",
+      "layer": "L3",
+      "name": "「返回《模块》章节列表」按钮",
+      "element_type": "button",
+      "label": "返回《XX》章节列表",
+      "region_id": "REG_008",
+      "function_id": "FN_010",
+      "selector": null,
+      "states": {
+        "normal": {
+          "enabled": true,
+          "visible": true
+        },
+        "disabled": {
+          "enabled": false,
+          "visible": true,
+          "condition": null
+        },
+        "hidden": {
+          "enabled": false,
+          "visible": false,
+          "condition": null
+        }
+      },
+      "tooltip": null,
+      "shortcut": null,
+      "meta": {
+        "confidence": 0.9
+      }
+    }
+  ],
+  "permissions": [
+    {
+      "triple_id": "TRIPLE_00103",
+      "subject_id": "ROLE_001",
+      "subject_type": "ROLE",
+      "predicate": "CAN_EXECUTE",
+      "object_id": "FN_010",
+      "object_type": "FUNCTION",
+      "properties": {
+        "level": "read"
+      },
+      "evidence_ids": [],
+      "extracted_at_layer": "L3",
+      "confidence": 0.9,
+      "created_at": "2026-10-14T13:35:20+08:00",
+      "dirty": false
+    },
+    {
+      "triple_id": "TRIPLE_00104",
+      "subject_id": "ROLE_001",
+      "subject_type": "ROLE",
+      "predicate": "CAN_EXECUTE",
+      "object_id": "FN_011",
+      "object_type": "FUNCTION",
+      "properties": {
+        "level": "read"
+      },
+      "evidence_ids": [],
+      "extracted_at_layer": "L3",
+      "confidence": 0.9,
+      "created_at": "2026-10-14T13:35:20+08:00",
+      "dirty": false
+    }
+  ],
+  "extracted_at": "2026-10-14T13:37:19+08:00"
+}

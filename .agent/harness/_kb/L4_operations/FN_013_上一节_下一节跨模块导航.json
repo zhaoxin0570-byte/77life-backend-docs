@@ -1,0 +1,84 @@
+{
+  "function": {
+    "id": "FN_013",
+    "type": "FUNCTION",
+    "layer": "L3",
+    "name": "上一节/下一节跨模块导航",
+    "region_id": "REG_009",
+    "page_id": null,
+    "module_id": "MOD_003",
+    "function_type": "query",
+    "target_entity_id": "ENT_002",
+    "opens_page_id": "PAGE_003",
+    "preconditions": [],
+    "risk_level": "low",
+    "requires_confirmation": false,
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  "steps": [
+    {
+      "id": "STEP_018",
+      "type": "STEP",
+      "layer": "L4",
+      "name": "点击「下一节」",
+      "function_id": "FN_013",
+      "step_index": 1,
+      "step_type": "action",
+      "action_type": "click",
+      "target_element_id": "ELM_009",
+      "description": "点击「下一节」",
+      "expected_result": "跳转下一模块的下一章节，可连续阅读",
+      "next_step_ids": [
+        "STEP_019"
+      ],
+      "branch_on_condition": null,
+      "error_to_step_id": null,
+      "diagram_node_label": "点击「下一节」",
+      "meta": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "STEP_019",
+      "type": "STEP",
+      "layer": "L4",
+      "name": "点击「上一节」",
+      "function_id": "FN_013",
+      "step_index": 2,
+      "step_type": "action",
+      "action_type": "click",
+      "target_element_id": "ELM_009",
+      "description": "点击「上一节」",
+      "expected_result": "返回上一章节",
+      "next_step_ids": [],
+      "branch_on_condition": null,
+      "error_to_step_id": null,
+      "diagram_node_label": "点击「上一节」",
+      "meta": {
+        "confidence": 0.9
+      }
+    }
+  ],
+  "flowchart": {
+    "type": "flowchart TD",
+    "nodes": [
+      {
+        "id": "STEP_018",
+        "label": "点击「下一节」"
+      },
+      {
+        "id": "STEP_019",
+        "label": "点击「上一节」"
+      }
+    ],
+    "edges": [
+      {
+        "from": "STEP_018",
+        "to": "STEP_019"
+      }
+    ]
+  },
+  "extracted_at": "2026-10-14T13:37:19+08:00"
+}

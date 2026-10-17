@@ -1,11 +1,4 @@
-# 依赖
-node_modules/
-
-# 构建产物
-dist/
-
-# 本地工具/会话数据
-.agent/
+# 本地 IDE 会话数据
 .codebuddy/
 
 # 日志与系统文件

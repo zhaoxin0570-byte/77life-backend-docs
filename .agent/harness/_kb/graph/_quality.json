@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-10-14T13:35:20+08:00",
+  "nodes_total": 81,
+  "nodes_by_type": {
+    "MODULE": 4,
+    "PAGE": 4,
+    "REGION": 14,
+    "ENTITY": 5,
+    "ROLE": 1,
+    "ELEMENT": 11,
+    "FUNCTION": 18,
+    "STEP": 24
+  },
+  "triples_total": 114,
+  "evidence_total": 24,
+  "snakes_total": 3,
+  "entity_alignment_pending": 0,
+  "low_confidence_nodes": [],
+  "evidence_coverage": 0.617,
+  "cross_verified_ratio": 0.0,
+  "notes": "本项目为纯前端静态文档站，无后端 API 与数据库，实体无 table_name；证据全部来自前端文件与 README/docx 派生说明，单源为主。"
+}

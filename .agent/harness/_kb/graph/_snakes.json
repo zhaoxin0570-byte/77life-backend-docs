@@ -1,0 +1,203 @@
+[
+  {
+    "snake_id": "SNAKE_001",
+    "name": "读者阅读链（打开站点到连续阅读）",
+    "description": "从打开文档站到按模块→章节→步骤阅读、看完截图再切到下一节的完整读者动线，跨 工作台/模块浏览/章节阅读 三个模块",
+    "category": "end_to_end_flow",
+    "confidence": 0.93,
+    "node_ids": [
+      {
+        "node_id": "FN_001",
+        "node_type": "FUNCTION",
+        "module": "工作台与统计总览",
+        "role_in_chain": "initiator",
+        "link_to_next": {
+          "type": "manual_trigger",
+          "description": "在侧边栏选择目标模块"
+        }
+      },
+      {
+        "node_id": "FN_004",
+        "node_type": "FUNCTION",
+        "module": "模块与章节浏览",
+        "role_in_chain": "middle",
+        "link_to_next": {
+          "type": "manual_trigger",
+          "description": "点击章节行进入详情"
+        }
+      },
+      {
+        "node_id": "FN_008",
+        "node_type": "FUNCTION",
+        "module": "模块与章节浏览",
+        "role_in_chain": "middle",
+        "link_to_next": {
+          "type": "data_flow",
+          "description": "章节详情页加载该章全部步骤"
+        }
+      },
+      {
+        "node_id": "FN_010",
+        "node_type": "FUNCTION",
+        "module": "章节阅读与截图查看",
+        "role_in_chain": "middle",
+        "link_to_next": {
+          "type": "manual_trigger",
+          "description": "点击截图看大图"
+        }
+      },
+      {
+        "node_id": "FN_012",
+        "node_type": "FUNCTION",
+        "module": "章节阅读与截图查看",
+        "role_in_chain": "middle",
+        "link_to_next": {
+          "type": "manual_trigger",
+          "description": "点击下一节继续阅读"
+        }
+      },
+      {
+        "node_id": "FN_013",
+        "node_type": "FUNCTION",
+        "module": "章节阅读与截图查看",
+        "role_in_chain": "terminator",
+        "link_to_next": null
+      }
+    ],
+    "extracted_from": [
+      {
+        "triple_ids": []
+      },
+      {
+        "source_file": "src/views/DocLayout.vue",
+        "line": 23
+      }
+    ],
+    "meta": {
+      "manual_verified": true,
+      "verified_at": "2026-10-14T13:35:20+08:00"
+    }
+  },
+  {
+    "snake_id": "SNAKE_002",
+    "name": "内容维护链（新增一个文档模块）",
+    "description": "维护者从零新增一个后台模块文档的完整链路：写模块文件→注册→放截图→运行验证→构建部署",
+    "category": "user_journey",
+    "confidence": 0.95,
+    "node_ids": [
+      {
+        "node_id": "FN_014",
+        "node_type": "FUNCTION",
+        "module": "文档内容维护",
+        "role_in_chain": "initiator",
+        "link_to_next": {
+          "type": "manual_trigger",
+          "description": "文件写好后注册"
+        }
+      },
+      {
+        "node_id": "FN_015",
+        "node_type": "FUNCTION",
+        "module": "文档内容维护",
+        "role_in_chain": "middle",
+        "link_to_next": {
+          "type": "data_flow",
+          "description": "注册后侧边栏与进度表出现新模块"
+        }
+      },
+      {
+        "node_id": "FN_016",
+        "node_type": "FUNCTION",
+        "module": "文档内容维护",
+        "role_in_chain": "middle",
+        "link_to_next": {
+          "type": "manual_trigger",
+          "description": "本地启动验证"
+        }
+      },
+      {
+        "node_id": "FN_017",
+        "node_type": "FUNCTION",
+        "module": "文档内容维护",
+        "role_in_chain": "middle",
+        "link_to_next": {
+          "type": "data_flow",
+          "description": "工作台统计自动更新"
+        }
+      },
+      {
+        "node_id": "FN_001",
+        "node_type": "FUNCTION",
+        "module": "工作台与统计总览",
+        "role_in_chain": "middle",
+        "link_to_next": {
+          "type": "manual_trigger",
+          "description": "验证无误后构建部署"
+        }
+      },
+      {
+        "node_id": "FN_018",
+        "node_type": "FUNCTION",
+        "module": "文档内容维护",
+        "role_in_chain": "terminator",
+        "link_to_next": null
+      }
+    ],
+    "extracted_from": [
+      {
+        "source_file": "README.md",
+        "line": 50
+      }
+    ],
+    "meta": {
+      "manual_verified": true,
+      "verified_at": "2026-10-14T13:35:20+08:00"
+    }
+  },
+  {
+    "snake_id": "SNAKE_003",
+    "name": "统计数据传播链（modules 到三处消费）",
+    "description": "src/docs/index.js 的 modules 数组如何同时驱动工作台统计卡、进度表与侧边栏目录的数据流",
+    "category": "data_propagation",
+    "confidence": 0.95,
+    "node_ids": [
+      {
+        "node_id": "ENT_001",
+        "node_type": "ENTITY",
+        "module": "文档内容维护",
+        "role_in_chain": "initiator",
+        "link_to_next": {
+          "type": "data_flow",
+          "description": "docStats 由 modules 推导"
+        }
+      },
+      {
+        "node_id": "ENT_005",
+        "node_type": "ENTITY",
+        "module": "工作台与统计总览",
+        "role_in_chain": "middle",
+        "link_to_next": {
+          "type": "data_flow",
+          "description": "统计卡 + 进度表 + 侧边栏目录三处消费"
+        }
+      },
+      {
+        "node_id": "FN_001",
+        "node_type": "FUNCTION",
+        "module": "工作台与统计总览",
+        "role_in_chain": "terminator",
+        "link_to_next": null
+      }
+    ],
+    "extracted_from": [
+      {
+        "source_file": "src/docs/index.js",
+        "line": 48
+      }
+    ],
+    "meta": {
+      "manual_verified": true,
+      "verified_at": "2026-10-14T13:35:20+08:00"
+    }
+  }
+]

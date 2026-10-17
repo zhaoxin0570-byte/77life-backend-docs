@@ -1,0 +1,90 @@
+{
+  "function": {
+    "id": "FN_010",
+    "type": "FUNCTION",
+    "layer": "L3",
+    "name": "阅读步骤操作说明",
+    "region_id": "REG_008",
+    "page_id": null,
+    "module_id": "MOD_003",
+    "function_type": "read",
+    "target_entity_id": "ENT_003",
+    "opens_page_id": null,
+    "preconditions": [],
+    "risk_level": "low",
+    "requires_confirmation": false,
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  "steps": [
+    {
+      "id": "STEP_013",
+      "type": "STEP",
+      "layer": "L4",
+      "name": "进入章节详情页",
+      "function_id": "FN_010",
+      "step_index": 1,
+      "step_type": "navigation",
+      "action_type": "click",
+      "target_element_id": "ELM_006",
+      "description": "进入章节详情页",
+      "expected_result": "展示章节标题与全部步骤",
+      "next_step_ids": [
+        "STEP_014"
+      ],
+      "branch_on_condition": null,
+      "error_to_step_id": null,
+      "diagram_node_label": "进入章节详情页",
+      "meta": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "STEP_014",
+      "type": "STEP",
+      "layer": "L4",
+      "name": "阅读步骤内容",
+      "function_id": "FN_010",
+      "step_index": 2,
+      "step_type": "action",
+      "action_type": null,
+      "target_element_id": null,
+      "description": "阅读步骤内容",
+      "expected_result": "每步含序号、标题、菜单路径、操作说明与注意事项",
+      "next_step_ids": [
+        "STEP_015"
+      ],
+      "branch_on_condition": null,
+      "error_to_step_id": null,
+      "diagram_node_label": "阅读步骤内容",
+      "meta": {
+        "confidence": 0.9
+      }
+    }
+  ],
+  "flowchart": {
+    "type": "flowchart TD",
+    "nodes": [
+      {
+        "id": "STEP_013",
+        "label": "进入章节详情页"
+      },
+      {
+        "id": "STEP_014",
+        "label": "阅读步骤内容"
+      }
+    ],
+    "edges": [
+      {
+        "from": "STEP_013",
+        "to": "STEP_014"
+      },
+      {
+        "from": "STEP_014",
+        "to": "STEP_015"
+      }
+    ]
+  },
+  "extracted_at": "2026-10-14T13:37:19+08:00"
+}

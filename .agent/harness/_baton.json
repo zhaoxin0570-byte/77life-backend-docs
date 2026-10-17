@@ -1,0 +1,141 @@
+{
+  "meta": {
+    "skill": "ManualGen",
+    "version": "6.3.0",
+    "state": "DONE",
+    "sub_state": null,
+    "session_id": "manual_20261014_132535",
+    "project_path": "f:/77生活后台操作文档/77 backend",
+    "project_name": "七七生活后台操作文档系统",
+    "project_shape": "frontend_only",
+    "scale": "S1",
+    "created_at": "2026-10-14T13:25:35+08:00",
+    "updated_at": "2026-10-14T13:49:39+08:00",
+    "is_running": 0,
+    "run_count": 1,
+    "current_layer": null,
+    "small_project_fastpath": true,
+    "project_git_head_sha": null,
+    "user_preferences": {
+      "document_style": "detailed",
+      "role_focus": null,
+      "module_priority": [],
+      "depth_level": "full",
+      "language": "zh-CN",
+      "custom_notes": null
+    },
+    "work_mode": "full"
+  },
+  "progress": {
+    "START": "",
+    "L0_SKELETON": "completed 2026-10-14T13:29:50+08:00",
+    "L1_MODULE": "skipped_fastpath (EXTRACT 合并)",
+    "L2_REGION": "skipped_fastpath (EXTRACT 合并)",
+    "L3_FUNCTION": "skipped_fastpath (EXTRACT 合并)",
+    "L4_OPERATION": "skipped_fastpath (EXTRACT 合并)",
+    "L5_DETAIL": "skipped_fastpath (EXTRACT 合并)",
+    "GRAPH_BUILD": "completed 2026-10-14T13:35:46+08:00 (81 nodes / 114 triples / 24 evidence / 3 snakes)",
+    "GAP_ANALYSIS": "",
+    "AUTO_REVIEW": "",
+    "RESOLVE": "",
+    "WRITE": "completed (4 modules + 5 appendices + final manual) @ 2026-10-14T13:49:39+08:00",
+    "REFINE": "completed (all modules >=9/10) @ 2026-10-14T13:49:39+08:00",
+    "REFERENCE_CHECK": "completed (terms 100%, refs valid) @ 2026-10-14T13:49:39+08:00",
+    "INTEGRATE": "completed (final manual at project root) @ 2026-10-14T13:49:39+08:00",
+    "AUDIT": "completed (10-dim avg 97.0 + coverage PASS) @ 2026-10-14T13:49:39+08:00",
+    "TODO_RESOLVE": "completed (6/6 = 100%) @ 2026-10-14T13:49:39+08:00",
+    "JUDGE": "PASS (4/4 modules >=90, PASS_rate 100%) @ 2026-10-14T13:49:39+08:00",
+    "DONE": "delivered @ 2026-10-14T13:49:39+08:00",
+    "GATE_G0_L0_L1": "PASS 2026-10-14T13:29:50+08:00 (fastpath: EXPLORE/EXTRACT 合并提取)",
+    "GATE_G1_L1_L2": "",
+    "GATE_G2_L2_L3": "",
+    "GATE_G3_L3_L4": "",
+    "GATE_G4_L4_L5": "",
+    "GATE_G5_L5_GRAPH": "PASS 2026-10-14T13:35:46+08:00 (fastpath: EXTRACT 直接入图)",
+    "GATE_WRITE_QUALITY": "PASS (scan_tech P0=0) @ 2026-10-14T13:49:39+08:00"
+  },
+  "layers": {
+    "L0": {
+      "status": "completed",
+      "modules_total": 4,
+      "modules_completed": 4,
+      "roles_total": 1,
+      "roles_completed": 1,
+      "dependency_edges": 11,
+      "data_chain_length": 6,
+      "quality_score": 92,
+      "artifacts": [
+        ".agent/harness/_kb/L0_skeleton.json",
+        ".agent/harness/_kb/L0_skeleton_report.md"
+      ]
+    },
+    "L1": {
+      "status": "skipped_fastpath",
+      "note": "S1 超小项目：六层信息由 EXTRACT 合并提取，节点直接入图谱"
+    },
+    "L2": {
+      "status": "skipped_fastpath",
+      "note": "S1 超小项目：六层信息由 EXTRACT 合并提取，节点直接入图谱"
+    },
+    "L3": {
+      "status": "skipped_fastpath",
+      "note": "S1 超小项目：六层信息由 EXTRACT 合并提取，节点直接入图谱"
+    },
+    "L4": {
+      "status": "skipped_fastpath",
+      "note": "S1 超小项目：六层信息由 EXTRACT 合并提取，节点直接入图谱"
+    },
+    "L5": {
+      "status": "skipped_fastpath",
+      "note": "S1 超小项目：六层信息由 EXTRACT 合并提取，节点直接入图谱"
+    },
+    "GRAPH_BUILD": {
+      "status": "completed",
+      "nodes_total": 81,
+      "triples_total": 114,
+      "evidence_total": 24,
+      "snakes_total": 3,
+      "entity_alignment_pending": 0,
+      "artifacts": [
+        "_kb/graph/_nodes.json",
+        "_kb/graph/_triples.json",
+        "_kb/graph/_evidence.json",
+        "_kb/graph/_snakes.json",
+        "_kb/graph/_layer_index.json",
+        "_kb/graph/_quality.json"
+      ]
+    },
+    "WRITE": {
+      "status": "completed",
+      "modules_written": 4,
+      "appendices": 5
+    },
+    "INTEGRATE": {
+      "status": "completed",
+      "final_manual": "七七生活后台操作文档系统 用户操作手册.md"
+    }
+  },
+  "graph": {
+    "nodes_total": 81,
+    "triples_total": 114,
+    "evidence_total": 24,
+    "snakes_total": 3,
+    "entity_alignment_pending": 0
+  },
+  "rework": {
+    "history": []
+  },
+  "delivery": {
+    "final_manual": "七七生活后台操作文档系统 用户操作手册.md",
+    "modules_dir": "output_user_manual/_modules/",
+    "appendix_dir": "output_user_manual/_appendix/",
+    "cli_gates": {
+      "verify": "PASS",
+      "check_deliverables": "PASS",
+      "coverage": "PASS 4/4",
+      "scan_tech": "PASS (P0=0, P2=2 localhost refs)",
+      "baton_fix": "PASS"
+    },
+    "completed_at": "2026-10-14T13:49:39+08:00"
+  }
+}

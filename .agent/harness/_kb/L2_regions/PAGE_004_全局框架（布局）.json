@@ -1,0 +1,120 @@
+{
+  "page": {
+    "id": "PAGE_004",
+    "type": "PAGE",
+    "layer": "L1",
+    "name": "全局框架（布局）",
+    "module_id": "MOD_002",
+    "route": null,
+    "component_path": "src/views/DocLayout.vue",
+    "layout": "sidebar_layout",
+    "tabs": [],
+    "meta": {
+      "confidence": 0.98
+    }
+  },
+  "regions": [
+    {
+      "id": "REG_011",
+      "type": "REGION",
+      "layer": "L2",
+      "name": "侧边栏品牌区",
+      "page_id": "PAGE_004",
+      "module_id": "MOD_002",
+      "region_type": "sidebar",
+      "layout_position": "left",
+      "visible_conditions": [
+        {
+          "role": [
+            "ROLE_001"
+          ],
+          "state": null
+        }
+      ],
+      "meta": {
+        "confidence": 0.92
+      }
+    },
+    {
+      "id": "REG_012",
+      "type": "REGION",
+      "layer": "L2",
+      "name": "侧边栏菜单区",
+      "page_id": "PAGE_004",
+      "module_id": "MOD_002",
+      "region_type": "sidebar",
+      "layout_position": "left",
+      "visible_conditions": [
+        {
+          "role": [
+            "ROLE_001"
+          ],
+          "state": null
+        }
+      ],
+      "meta": {
+        "confidence": 0.92
+      }
+    },
+    {
+      "id": "REG_013",
+      "type": "REGION",
+      "layer": "L2",
+      "name": "面包屑区",
+      "page_id": "PAGE_004",
+      "module_id": "MOD_002",
+      "region_type": "search_bar",
+      "layout_position": "top",
+      "visible_conditions": [
+        {
+          "role": [
+            "ROLE_001"
+          ],
+          "state": null
+        }
+      ],
+      "meta": {
+        "confidence": 0.92
+      }
+    },
+    {
+      "id": "REG_014",
+      "type": "REGION",
+      "layer": "L2",
+      "name": "内容区",
+      "page_id": "PAGE_004",
+      "module_id": "MOD_002",
+      "region_type": "tab_panel",
+      "layout_position": "center",
+      "visible_conditions": [
+        {
+          "role": [
+            "ROLE_001"
+          ],
+          "state": null
+        }
+      ],
+      "meta": {
+        "confidence": 0.92
+      }
+    }
+  ],
+  "region_trigger_relations": [
+    {
+      "from": "REG_012",
+      "to": "FN_004",
+      "predicate": "HAS_FUNCTION"
+    },
+    {
+      "from": "REG_012",
+      "to": "FN_005",
+      "predicate": "HAS_FUNCTION"
+    },
+    {
+      "from": "REG_012",
+      "to": "FN_006",
+      "predicate": "HAS_FUNCTION"
+    }
+  ],
+  "extracted_at": "2026-10-14T13:37:19+08:00"
+}

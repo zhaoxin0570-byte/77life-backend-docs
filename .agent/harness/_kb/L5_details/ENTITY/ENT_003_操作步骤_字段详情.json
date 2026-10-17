@@ -1,0 +1,65 @@
+{
+  "entity": {
+    "id": "ENT_003",
+    "type": "ENTITY",
+    "layer": "L1",
+    "name": "Step",
+    "display_name": "操作步骤",
+    "table_name": null,
+    "managed_by_module": "MOD_004",
+    "fields": [
+      {
+        "name": "id",
+        "label": "步骤ID",
+        "type": "String",
+        "required": true,
+        "visible_in_form": true,
+        "visible_in_list": false
+      },
+      {
+        "name": "title",
+        "label": "步骤标题",
+        "type": "String",
+        "required": true,
+        "visible_in_form": true,
+        "visible_in_list": true
+      },
+      {
+        "name": "menu",
+        "label": "菜单路径",
+        "type": "String",
+        "required": true,
+        "visible_in_form": true,
+        "visible_in_list": true
+      },
+      {
+        "name": "desc",
+        "label": "操作说明",
+        "type": "String",
+        "required": true,
+        "visible_in_form": true,
+        "visible_in_list": true
+      },
+      {
+        "name": "points",
+        "label": "注意事项",
+        "type": "Array",
+        "required": false,
+        "visible_in_form": true,
+        "visible_in_list": false
+      },
+      {
+        "name": "images",
+        "label": "操作截图",
+        "type": "Array",
+        "required": false,
+        "visible_in_form": true,
+        "visible_in_list": false
+      }
+    ],
+    "meta": {
+      "confidence": 0.97
+    }
+  },
+  "extracted_at": "2026-10-14T13:37:19+08:00"
+}

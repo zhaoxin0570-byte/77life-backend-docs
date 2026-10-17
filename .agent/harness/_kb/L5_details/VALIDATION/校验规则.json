@@ -1,0 +1,30 @@
+{
+  "rules": [
+    {
+      "target": "ENT_003.menu",
+      "rule": "必填，菜单路径格式「一级 → 二级 → 页面」",
+      "source": "growth.js/finance.js 全部 steps 均含 menu"
+    },
+    {
+      "target": "ENT_003.desc",
+      "rule": "必填，操作说明文字",
+      "source": "growth.js steps"
+    },
+    {
+      "target": "ENT_001.status",
+      "rule": "枚举 active/reference/planned，控制徽章与统计",
+      "source": "index.js docStats"
+    },
+    {
+      "target": "ENT_003.images",
+      "rule": "可省略；import 自 src/assets/docs/，加载失败浏览器显示裂图",
+      "source": "DocChapter.vue img"
+    },
+    {
+      "target": "hash 路由",
+      "rule": "模块/章节 ID 在 URL 中必须唯一，否则路由匹配错乱",
+      "source": "router/index.js"
+    }
+  ],
+  "extracted_at": "2026-10-14T13:37:19+08:00"
+}

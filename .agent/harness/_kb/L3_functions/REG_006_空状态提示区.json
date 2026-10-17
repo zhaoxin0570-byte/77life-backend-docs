@@ -1,0 +1,96 @@
+{
+  "region": {
+    "id": "REG_006",
+    "type": "REGION",
+    "layer": "L2",
+    "name": "空状态提示区",
+    "page_id": "PAGE_002",
+    "module_id": "MOD_002",
+    "region_type": "detail_form",
+    "layout_position": "center",
+    "visible_conditions": [
+      {
+        "role": [
+          "ROLE_001"
+        ],
+        "state": null
+      }
+    ],
+    "meta": {
+      "confidence": 0.92
+    }
+  },
+  "functions": [
+    {
+      "id": "FN_009",
+      "type": "FUNCTION",
+      "layer": "L3",
+      "name": "查看待完善模块占位提示",
+      "region_id": "REG_006",
+      "page_id": null,
+      "module_id": "MOD_002",
+      "function_type": "read",
+      "target_entity_id": "ENT_001",
+      "opens_page_id": null,
+      "preconditions": [],
+      "risk_level": "low",
+      "requires_confirmation": false,
+      "meta": {
+        "confidence": 0.9
+      }
+    }
+  ],
+  "elements": [
+    {
+      "id": "ELM_010",
+      "type": "ELEMENT",
+      "layer": "L3",
+      "name": "「返回文档首页」按钮",
+      "element_type": "button",
+      "label": "返回文档首页",
+      "region_id": "REG_006",
+      "function_id": "FN_009",
+      "selector": null,
+      "states": {
+        "normal": {
+          "enabled": true,
+          "visible": true
+        },
+        "disabled": {
+          "enabled": false,
+          "visible": true,
+          "condition": null
+        },
+        "hidden": {
+          "enabled": false,
+          "visible": false,
+          "condition": null
+        }
+      },
+      "tooltip": null,
+      "shortcut": null,
+      "meta": {
+        "confidence": 0.9
+      }
+    }
+  ],
+  "permissions": [
+    {
+      "triple_id": "TRIPLE_00102",
+      "subject_id": "ROLE_001",
+      "subject_type": "ROLE",
+      "predicate": "CAN_EXECUTE",
+      "object_id": "FN_009",
+      "object_type": "FUNCTION",
+      "properties": {
+        "level": "read"
+      },
+      "evidence_ids": [],
+      "extracted_at_layer": "L3",
+      "confidence": 0.9,
+      "created_at": "2026-10-14T13:35:20+08:00",
+      "dirty": false
+    }
+  ],
+  "extracted_at": "2026-10-14T13:37:19+08:00"
+}

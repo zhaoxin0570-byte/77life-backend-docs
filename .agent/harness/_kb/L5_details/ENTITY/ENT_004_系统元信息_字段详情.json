@@ -1,0 +1,47 @@
+{
+  "entity": {
+    "id": "ENT_004",
+    "type": "ENTITY",
+    "layer": "L1",
+    "name": "systemMeta",
+    "display_name": "系统元信息",
+    "table_name": null,
+    "managed_by_module": "MOD_004",
+    "fields": [
+      {
+        "name": "system",
+        "label": "系统名",
+        "type": "String",
+        "required": true
+      },
+      {
+        "name": "title",
+        "label": "文档标题",
+        "type": "String",
+        "required": true
+      },
+      {
+        "name": "subtitle",
+        "label": "副标题",
+        "type": "String",
+        "required": true
+      },
+      {
+        "name": "version",
+        "label": "版本号",
+        "type": "String",
+        "required": true
+      },
+      {
+        "name": "updatedAt",
+        "label": "更新日期",
+        "type": "String",
+        "required": true
+      }
+    ],
+    "meta": {
+      "confidence": 0.97
+    }
+  },
+  "extracted_at": "2026-10-14T13:37:19+08:00"
+}

@@ -1,0 +1,130 @@
+{
+  "region": {
+    "id": "REG_005",
+    "type": "REGION",
+    "layer": "L2",
+    "name": "章节目录区",
+    "page_id": "PAGE_002",
+    "module_id": "MOD_002",
+    "region_type": "data_table",
+    "layout_position": "center",
+    "visible_conditions": [
+      {
+        "role": [
+          "ROLE_001"
+        ],
+        "state": null
+      }
+    ],
+    "meta": {
+      "confidence": 0.92
+    }
+  },
+  "functions": [
+    {
+      "id": "FN_007",
+      "type": "FUNCTION",
+      "layer": "L3",
+      "name": "浏览章节目录",
+      "region_id": "REG_005",
+      "page_id": null,
+      "module_id": "MOD_002",
+      "function_type": "read",
+      "target_entity_id": "ENT_002",
+      "opens_page_id": null,
+      "preconditions": [],
+      "risk_level": "low",
+      "requires_confirmation": false,
+      "meta": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "FN_008",
+      "type": "FUNCTION",
+      "layer": "L3",
+      "name": "进入章节详情",
+      "region_id": "REG_005",
+      "page_id": null,
+      "module_id": "MOD_002",
+      "function_type": "query",
+      "target_entity_id": "ENT_002",
+      "opens_page_id": "PAGE_003",
+      "preconditions": [],
+      "risk_level": "low",
+      "requires_confirmation": false,
+      "meta": {
+        "confidence": 0.9
+      }
+    }
+  ],
+  "elements": [
+    {
+      "id": "ELM_006",
+      "type": "ELEMENT",
+      "layer": "L3",
+      "name": "章节行",
+      "element_type": "link",
+      "label": "章节标题行（序号+标题+简介+步骤数）",
+      "region_id": "REG_005",
+      "function_id": "FN_008",
+      "selector": null,
+      "states": {
+        "normal": {
+          "enabled": true,
+          "visible": true
+        },
+        "disabled": {
+          "enabled": false,
+          "visible": true,
+          "condition": null
+        },
+        "hidden": {
+          "enabled": false,
+          "visible": false,
+          "condition": null
+        }
+      },
+      "tooltip": null,
+      "shortcut": null,
+      "meta": {
+        "confidence": 0.9
+      }
+    }
+  ],
+  "permissions": [
+    {
+      "triple_id": "TRIPLE_00100",
+      "subject_id": "ROLE_001",
+      "subject_type": "ROLE",
+      "predicate": "CAN_EXECUTE",
+      "object_id": "FN_007",
+      "object_type": "FUNCTION",
+      "properties": {
+        "level": "read"
+      },
+      "evidence_ids": [],
+      "extracted_at_layer": "L3",
+      "confidence": 0.9,
+      "created_at": "2026-10-14T13:35:20+08:00",
+      "dirty": false
+    },
+    {
+      "triple_id": "TRIPLE_00101",
+      "subject_id": "ROLE_001",
+      "subject_type": "ROLE",
+      "predicate": "CAN_EXECUTE",
+      "object_id": "FN_008",
+      "object_type": "FUNCTION",
+      "properties": {
+        "level": "read"
+      },
+      "evidence_ids": [],
+      "extracted_at_layer": "L3",
+      "confidence": 0.9,
+      "created_at": "2026-10-14T13:35:20+08:00",
+      "dirty": false
+    }
+  ],
+  "extracted_at": "2026-10-14T13:37:19+08:00"
+}

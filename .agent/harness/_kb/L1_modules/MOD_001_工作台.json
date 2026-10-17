@@ -1,0 +1,68 @@
+{
+  "module": {
+    "id": "MOD_001",
+    "type": "MODULE",
+    "layer": "L1",
+    "name": "工作台与统计总览",
+    "display_name": "工作台",
+    "category": "report",
+    "sort_order": 1,
+    "description": "文档站首页：四张统计卡展示全站文档规模，模块进度表总览各模块状态",
+    "entry_points": [
+      {
+        "menu_path": "左侧导航 > 工作台",
+        "icon": "home"
+      }
+    ],
+    "status": "active",
+    "meta": {
+      "source_files": [
+        "src/views/DocHome.vue",
+        "src/docs/index.js"
+      ],
+      "confidence": 0.98,
+      "backfill_count": 0
+    }
+  },
+  "pages": [
+    {
+      "id": "PAGE_001",
+      "type": "PAGE",
+      "layer": "L1",
+      "name": "工作台",
+      "module_id": "MOD_001",
+      "route": "/",
+      "component_path": "src/views/DocHome.vue",
+      "layout": "dashboard_layout",
+      "tabs": [],
+      "meta": {
+        "confidence": 0.98
+      }
+    }
+  ],
+  "functions": [
+    {
+      "id": "FN_001",
+      "name": "查看文档统计",
+      "function_type": "read"
+    },
+    {
+      "id": "FN_002",
+      "name": "查看模块文档进度表",
+      "function_type": "read"
+    },
+    {
+      "id": "FN_003",
+      "name": "从进度表跳转模块概览",
+      "function_type": "query"
+    }
+  ],
+  "entities": [
+    "ENT_005"
+  ],
+  "high_frequency_scenarios": [],
+  "extracted_at": "2026-10-14T13:37:19+08:00",
+  "source": "EXTRACT 合并提取（fastpath）",
+  "name": "工作台与统计总览",
+  "id": "MOD_001"
+}

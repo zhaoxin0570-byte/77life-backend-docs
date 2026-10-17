@@ -1,0 +1,120 @@
+{
+  "project": {
+    "name": "七七生活后台操作文档系统",
+    "path": "f:/77生活后台操作文档/77 backend",
+    "shape": "frontend_only",
+    "tech_stack": ["Vue 3", "Vue Router 4", "Vite 5", "Element Plus 风格（自绘 CSS）"],
+    "description": "将七七生活后台各模块的操作流程整理为可在线浏览的文档站，按「模块 → 章节 → 步骤」三级展示，每步含菜单路径、操作说明、注意事项与可放大的操作截图。纯前端静态应用，hash 路由，可嵌入后台 iframe。"
+  },
+  "scale": "S1",
+  "pages": [
+    {
+      "id": "PAGE_001",
+      "name": "工作台",
+      "route": "/",
+      "component": "src/views/DocHome.vue",
+      "purpose": "文档首页：统计已上线模块/章节/步骤/截图数量，展示全部模块的文档进度表",
+      "regions": ["统计卡片区", "模块进度表区", "关于本文档系统说明区"]
+    },
+    {
+      "id": "PAGE_002",
+      "name": "模块概览",
+      "route": "/doc/:moduleId",
+      "component": "src/views/DocModule.vue",
+      "purpose": "单个模块的入口页：模块名称/简介/状态徽章 + 章节目录（含每章步骤数）",
+      "regions": ["模块头部区", "章节目录区", "空状态提示区"]
+    },
+    {
+      "id": "PAGE_003",
+      "name": "章节详情",
+      "route": "/doc/:moduleId/:chapterId",
+      "component": "src/views/DocChapter.vue",
+      "purpose": "章节正文：按步骤展示菜单路径、操作说明、注意事项与截图；提供上一节/下一节跨模块导航与截图灯箱",
+      "regions": ["章节头部区", "步骤内容区", "上下节导航区", "截图灯箱区"]
+    },
+    {
+      "id": "PAGE_004",
+      "name": "全局框架（布局）",
+      "route": null,
+      "component": "src/views/DocLayout.vue",
+      "purpose": "全站框架：左侧品牌 + 工作台入口 + 模块→章节两级可折叠导航 + 版本页脚；右侧面包屑 + 内容插槽",
+      "regions": ["侧边栏品牌区", "侧边栏菜单区", "面包屑区", "内容区"]
+    }
+  ],
+  "modules": [
+    {
+      "id": "MOD_001",
+      "name": "工作台与统计总览",
+      "pages": ["PAGE_001"],
+      "entities": ["ENT_005"],
+      "summary": "打开文档站看到的首页：四张统计卡 + 全模块进度表",
+      "source_evidence": ["src/views/DocHome.vue", "src/docs/index.js#docStats"]
+    },
+    {
+      "id": "MOD_002",
+      "name": "模块与章节浏览",
+      "pages": ["PAGE_002", "PAGE_004"],
+      "entities": ["ENT_001", "ENT_002"],
+      "summary": "侧边栏模块分类（可展开/收起/展开全部）+ 模块概览页章节目录",
+      "source_evidence": ["src/views/DocLayout.vue", "src/views/DocModule.vue", "src/docs/index.js#modules"]
+    },
+    {
+      "id": "MOD_003",
+      "name": "章节阅读与截图查看",
+      "pages": ["PAGE_003"],
+      "entities": ["ENT_003", "ENT_004"],
+      "summary": "按步骤阅读操作说明，点击截图弹出大图灯箱，跨模块上一节/下一节连续阅读",
+      "source_evidence": ["src/views/DocChapter.vue", "src/docs/growth.js", "src/docs/finance.js"]
+    },
+    {
+      "id": "MOD_004",
+      "name": "文档内容维护（维护者）",
+      "pages": [],
+      "entities": ["ENT_001", "ENT_002", "ENT_003", "ENT_004"],
+      "summary": "通过 src/docs/*.js 模块文件与 index.js 注册中心增补模块/章节/步骤；README 定义了两步新增流程",
+      "source_evidence": ["src/docs/index.js", "src/docs/growth.js", "README.md"]
+    }
+  ],
+  "roles": [
+    {
+      "id": "ROLE_001",
+      "name": "文档读者（访客）",
+      "scope": "全站只读浏览，无登录、无账号体系；统计与目录对所有访客一致",
+      "source_evidence": ["src/main.js", "src/router/index.js"]
+    }
+  ],
+  "entities": [
+    {"id": "ENT_001", "name": "模块 Module", "fields": ["id", "name", "summary", "status", "icon", "chapters[]"], "source": "src/docs/index.js"},
+    {"id": "ENT_002", "name": "章节 Chapter", "fields": ["id", "title", "summary", "steps[]"], "source": "src/docs/index.js"},
+    {"id": "ENT_003", "name": "步骤 Step", "fields": ["id", "title", "menu", "desc", "points[]", "images[]"], "source": "src/docs/growth.js"},
+    {"id": "ENT_004", "name": "系统元信息 systemMeta", "fields": ["system", "title", "subtitle", "version", "updatedAt"], "source": "src/docs/index.js"},
+    {"id": "ENT_005", "name": "文档统计 docStats", "fields": ["modules", "active", "reference", "planned", "chapters", "steps", "images"], "source": "src/docs/index.js"}
+  ],
+  "content_modules": [
+    {"id": "growth", "name": "成长值模块", "status": "active", "chapters": 7, "steps": 21, "images": 23, "file": "src/docs/growth.js"},
+    {"id": "finance", "name": "财务", "status": "active", "chapters": 6, "steps": 7, "images": 12, "file": "src/docs/finance.js"},
+    {"id": "hidden", "name": "菜单隐藏需求", "status": "reference", "chapters": 13, "steps": 39, "images": 77, "file": "src/docs/hidden.js"},
+    {"id": "framework", "name": "后台全量模块框架（占位）", "status": "planned", "chapters": 0, "steps": 0, "images": 0, "file": "src/docs/framework.js"}
+  ],
+  "data_creation_chain": [
+    "整理模块内容（src/docs/<模块>.js，定义章节与步骤）",
+    "注册模块（src/docs/index.js import 并加入 modules 数组）",
+    "放置截图（src/assets/docs/，模块文件顶部 import 引用）",
+    "本地运行 / 构建部署（一键启动.bat / npm run dev / npm run build）",
+    "工作台统计与目录自动更新（docStats 由 modules 推导）",
+    "读者按 模块 → 章节 → 步骤 浏览，截图点击放大"
+  ],
+  "dependency_edges": [
+    {"from": "App.vue", "to": "DocLayout.vue", "type": "layout-wrap"},
+    {"from": "DocLayout.vue", "to": "src/docs/index.js", "type": "data: modules/systemMeta/getModule"},
+    {"from": "DocLayout.vue", "to": "src/docs/icons.js", "type": "data: iconSvg"},
+    {"from": "DocHome.vue", "to": "src/docs/index.js", "type": "data: modules/docStats"},
+    {"from": "DocModule.vue", "to": "src/docs/index.js", "type": "data: getModule"},
+    {"from": "DocChapter.vue", "to": "src/docs/index.js", "type": "data: getModule/allChapters"},
+    {"from": "src/docs/index.js", "to": "growth.js/finance.js/hidden.js/framework.js", "type": "aggregate: modules"},
+    {"from": "growth.js", "to": "src/assets/docs/*.png", "type": "asset-import"},
+    {"from": "finance.js", "to": "src/assets/docs/finance/*.png", "type": "asset-import"},
+    {"from": "hidden.js", "to": "src/assets/docs/hidden/*", "type": "asset-import"},
+    {"from": "src/router/index.js", "to": "DocHome/DocModule/DocChapter", "type": "route-mapping"}
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "module": {
+    "id": "MOD_004",
+    "type": "MODULE",
+    "layer": "L1",
+    "name": "文档内容维护",
+    "display_name": "内容维护（维护者）",
+    "category": "config",
+    "sort_order": 4,
+    "description": "维护者通过 src/docs 模块文件与注册中心增补内容：新增模块两步流程、截图放置、运行与构建部署",
+    "entry_points": [
+      {
+        "menu_path": "项目源码 src/docs/",
+        "icon": "set"
+      }
+    ],
+    "status": "active",
+    "meta": {
+      "source_files": [
+        "src/docs/index.js",
+        "README.md"
+      ],
+      "confidence": 0.95,
+      "backfill_count": 0
+    }
+  },
+  "pages": [],
+  "functions": [
+    {
+      "id": "FN_014",
+      "name": "新增文档模块文件",
+      "function_type": "create"
+    },
+    {
+      "id": "FN_015",
+      "name": "注册模块到索引",
+      "function_type": "update"
+    },
+    {
+      "id": "FN_016",
+      "name": "放置并引用操作截图",
+      "function_type": "create"
+    },
+    {
+      "id": "FN_017",
+      "name": "本地运行文档站",
+      "function_type": "config"
+    },
+    {
+      "id": "FN_018",
+      "name": "构建与部署",
+      "function_type": "config"
+    }
+  ],
+  "entities": [
+    "ENT_001",
+    "ENT_002",
+    "ENT_003",
+    "ENT_004"
+  ],
+  "high_frequency_scenarios": [],
+  "extracted_at": "2026-10-14T13:37:19+08:00",
+  "source": "EXTRACT 合并提取（fastpath）",
+  "name": "文档内容维护",
+  "id": "MOD_004"
+}

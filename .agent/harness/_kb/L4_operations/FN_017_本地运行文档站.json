@@ -1,0 +1,53 @@
+{
+  "function": {
+    "id": "FN_017",
+    "type": "FUNCTION",
+    "layer": "L3",
+    "name": "本地运行文档站",
+    "region_id": null,
+    "page_id": null,
+    "module_id": "MOD_004",
+    "function_type": "config",
+    "target_entity_id": null,
+    "opens_page_id": null,
+    "preconditions": [],
+    "risk_level": "low",
+    "requires_confirmation": false,
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  "steps": [
+    {
+      "id": "STEP_023",
+      "type": "STEP",
+      "layer": "L4",
+      "name": "双击「一键启动.bat」或 npm run dev",
+      "function_id": "FN_017",
+      "step_index": 1,
+      "step_type": "action",
+      "action_type": null,
+      "target_element_id": null,
+      "description": "双击「一键启动.bat」或 npm run dev",
+      "expected_result": "浏览器访问 http://localhost:5173",
+      "next_step_ids": [],
+      "branch_on_condition": null,
+      "error_to_step_id": null,
+      "diagram_node_label": "双击「一键启动.bat」或 npm run dev",
+      "meta": {
+        "confidence": 0.9
+      }
+    }
+  ],
+  "flowchart": {
+    "type": "flowchart TD",
+    "nodes": [
+      {
+        "id": "STEP_023",
+        "label": "双击「一键启动.bat」或 npm run dev"
+      }
+    ],
+    "edges": []
+  },
+  "extracted_at": "2026-10-14T13:37:19+08:00"
+}

@@ -1,0 +1,59 @@
+{
+  "entity": {
+    "id": "ENT_005",
+    "type": "ENTITY",
+    "layer": "L1",
+    "name": "docStats",
+    "display_name": "文档统计",
+    "table_name": null,
+    "managed_by_module": "MOD_001",
+    "fields": [
+      {
+        "name": "modules",
+        "label": "模块总数",
+        "type": "Integer",
+        "required": true
+      },
+      {
+        "name": "active",
+        "label": "已上线模块数",
+        "type": "Integer",
+        "required": true
+      },
+      {
+        "name": "reference",
+        "label": "参考资料数",
+        "type": "Integer",
+        "required": true
+      },
+      {
+        "name": "planned",
+        "label": "待完善数",
+        "type": "Integer",
+        "required": true
+      },
+      {
+        "name": "chapters",
+        "label": "章节总数",
+        "type": "Integer",
+        "required": true
+      },
+      {
+        "name": "steps",
+        "label": "操作步骤总数",
+        "type": "Integer",
+        "required": true
+      },
+      {
+        "name": "images",
+        "label": "操作截图总数",
+        "type": "Integer",
+        "required": true
+      }
+    ],
+    "meta": {
+      "confidence": 0.97
+    }
+  },
+  "extracted_at": "2026-10-14T13:37:19+08:00"
+}

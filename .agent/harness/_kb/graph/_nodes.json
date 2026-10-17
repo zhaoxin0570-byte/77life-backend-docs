@@ -1,0 +1,1921 @@
+[
+  {
+    "id": "MOD_001",
+    "type": "MODULE",
+    "layer": "L1",
+    "name": "工作台与统计总览",
+    "display_name": "工作台",
+    "category": "report",
+    "sort_order": 1,
+    "description": "文档站首页：四张统计卡展示全站文档规模，模块进度表总览各模块状态",
+    "entry_points": [
+      {
+        "menu_path": "左侧导航 > 工作台",
+        "icon": "home"
+      }
+    ],
+    "status": "active",
+    "meta": {
+      "source_files": [
+        "src/views/DocHome.vue",
+        "src/docs/index.js"
+      ],
+      "confidence": 0.98,
+      "backfill_count": 0
+    }
+  },
+  {
+    "id": "MOD_002",
+    "type": "MODULE",
+    "layer": "L1",
+    "name": "模块与章节浏览",
+    "display_name": "模块浏览",
+    "category": "core_business",
+    "sort_order": 2,
+    "description": "侧边栏模块→章节两级分类导航 + 模块概览页章节目录",
+    "entry_points": [
+      {
+        "menu_path": "左侧导航 > 模块分类",
+        "icon": "grid"
+      }
+    ],
+    "status": "active",
+    "meta": {
+      "source_files": [
+        "src/views/DocLayout.vue",
+        "src/views/DocModule.vue"
+      ],
+      "confidence": 0.98,
+      "backfill_count": 0
+    }
+  },
+  {
+    "id": "MOD_003",
+    "type": "MODULE",
+    "layer": "L1",
+    "name": "章节阅读与截图查看",
+    "display_name": "章节阅读",
+    "category": "core_business",
+    "sort_order": 3,
+    "description": "按步骤阅读操作说明（菜单路径/操作说明/注意事项），截图点击弹大图，跨模块上一节/下一节连续阅读",
+    "entry_points": [
+      {
+        "menu_path": "侧边栏 > 模块 > 章节",
+        "icon": "news"
+      }
+    ],
+    "status": "active",
+    "meta": {
+      "source_files": [
+        "src/views/DocChapter.vue"
+      ],
+      "confidence": 0.98,
+      "backfill_count": 0
+    }
+  },
+  {
+    "id": "MOD_004",
+    "type": "MODULE",
+    "layer": "L1",
+    "name": "文档内容维护",
+    "display_name": "内容维护（维护者）",
+    "category": "config",
+    "sort_order": 4,
+    "description": "维护者通过 src/docs 模块文件与注册中心增补内容：新增模块两步流程、截图放置、运行与构建部署",
+    "entry_points": [
+      {
+        "menu_path": "项目源码 src/docs/",
+        "icon": "set"
+      }
+    ],
+    "status": "active",
+    "meta": {
+      "source_files": [
+        "src/docs/index.js",
+        "README.md"
+      ],
+      "confidence": 0.95,
+      "backfill_count": 0
+    }
+  },
+  {
+    "id": "PAGE_001",
+    "type": "PAGE",
+    "layer": "L1",
+    "name": "工作台",
+    "module_id": "MOD_001",
+    "route": "/",
+    "component_path": "src/views/DocHome.vue",
+    "layout": "dashboard_layout",
+    "tabs": [],
+    "meta": {
+      "confidence": 0.98
+    }
+  },
+  {
+    "id": "PAGE_002",
+    "type": "PAGE",
+    "layer": "L1",
+    "name": "模块概览",
+    "module_id": "MOD_002",
+    "route": "/doc/:moduleId",
+    "component_path": "src/views/DocModule.vue",
+    "layout": "detail_layout",
+    "tabs": [],
+    "meta": {
+      "confidence": 0.98
+    }
+  },
+  {
+    "id": "PAGE_003",
+    "type": "PAGE",
+    "layer": "L1",
+    "name": "章节详情",
+    "module_id": "MOD_003",
+    "route": "/doc/:moduleId/:chapterId",
+    "component_path": "src/views/DocChapter.vue",
+    "layout": "detail_layout",
+    "tabs": [],
+    "meta": {
+      "confidence": 0.98
+    }
+  },
+  {
+    "id": "PAGE_004",
+    "type": "PAGE",
+    "layer": "L1",
+    "name": "全局框架（布局）",
+    "module_id": "MOD_002",
+    "route": null,
+    "component_path": "src/views/DocLayout.vue",
+    "layout": "sidebar_layout",
+    "tabs": [],
+    "meta": {
+      "confidence": 0.98
+    }
+  },
+  {
+    "id": "REG_001",
+    "type": "REGION",
+    "layer": "L2",
+    "name": "统计卡片区",
+    "page_id": "PAGE_001",
+    "module_id": "MOD_001",
+    "region_type": "stat_cards",
+    "layout_position": "top",
+    "visible_conditions": [
+      {
+        "role": [
+          "ROLE_001"
+        ],
+        "state": null
+      }
+    ],
+    "meta": {
+      "confidence": 0.92
+    }
+  },
+  {
+    "id": "REG_002",
+    "type": "REGION",
+    "layer": "L2",
+    "name": "模块进度表区",
+    "page_id": "PAGE_001",
+    "module_id": "MOD_001",
+    "region_type": "data_table",
+    "layout_position": "center",
+    "visible_conditions": [
+      {
+        "role": [
+          "ROLE_001"
+        ],
+        "state": null
+      }
+    ],
+    "meta": {
+      "confidence": 0.92
+    }
+  },
+  {
+    "id": "REG_003",
+    "type": "REGION",
+    "layer": "L2",
+    "name": "关于本文档系统说明区",
+    "page_id": "PAGE_001",
+    "module_id": "MOD_001",
+    "region_type": "detail_form",
+    "layout_position": "bottom",
+    "visible_conditions": [
+      {
+        "role": [
+          "ROLE_001"
+        ],
+        "state": null
+      }
+    ],
+    "meta": {
+      "confidence": 0.92
+    }
+  },
+  {
+    "id": "REG_004",
+    "type": "REGION",
+    "layer": "L2",
+    "name": "模块头部区",
+    "page_id": "PAGE_002",
+    "module_id": "MOD_002",
+    "region_type": "detail_form",
+    "layout_position": "top",
+    "visible_conditions": [
+      {
+        "role": [
+          "ROLE_001"
+        ],
+        "state": null
+      }
+    ],
+    "meta": {
+      "confidence": 0.92
+    }
+  },
+  {
+    "id": "REG_005",
+    "type": "REGION",
+    "layer": "L2",
+    "name": "章节目录区",
+    "page_id": "PAGE_002",
+    "module_id": "MOD_002",
+    "region_type": "data_table",
+    "layout_position": "center",
+    "visible_conditions": [
+      {
+        "role": [
+          "ROLE_001"
+        ],
+        "state": null
+      }
+    ],
+    "meta": {
+      "confidence": 0.92
+    }
+  },
+  {
+    "id": "REG_006",
+    "type": "REGION",
+    "layer": "L2",
+    "name": "空状态提示区",
+    "page_id": "PAGE_002",
+    "module_id": "MOD_002",
+    "region_type": "detail_form",
+    "layout_position": "center",
+    "visible_conditions": [
+      {
+        "role": [
+          "ROLE_001"
+        ],
+        "state": null
+      }
+    ],
+    "meta": {
+      "confidence": 0.92
+    }
+  },
+  {
+    "id": "REG_007",
+    "type": "REGION",
+    "layer": "L2",
+    "name": "章节头部区",
+    "page_id": "PAGE_003",
+    "module_id": "MOD_003",
+    "region_type": "detail_form",
+    "layout_position": "top",
+    "visible_conditions": [
+      {
+        "role": [
+          "ROLE_001"
+        ],
+        "state": null
+      }
+    ],
+    "meta": {
+      "confidence": 0.92
+    }
+  },
+  {
+    "id": "REG_008",
+    "type": "REGION",
+    "layer": "L2",
+    "name": "步骤内容区",
+    "page_id": "PAGE_003",
+    "module_id": "MOD_003",
+    "region_type": "detail_form",
+    "layout_position": "center",
+    "visible_conditions": [
+      {
+        "role": [
+          "ROLE_001"
+        ],
+        "state": null
+      }
+    ],
+    "meta": {
+      "confidence": 0.92
+    }
+  },
+  {
+    "id": "REG_009",
+    "type": "REGION",
+    "layer": "L2",
+    "name": "上下节导航区",
+    "page_id": "PAGE_003",
+    "module_id": "MOD_003",
+    "region_type": "action_bar",
+    "layout_position": "bottom",
+    "visible_conditions": [
+      {
+        "role": [
+          "ROLE_001"
+        ],
+        "state": null
+      }
+    ],
+    "meta": {
+      "confidence": 0.92
+    }
+  },
+  {
+    "id": "REG_010",
+    "type": "REGION",
+    "layer": "L2",
+    "name": "截图灯箱区",
+    "page_id": "PAGE_003",
+    "module_id": "MOD_003",
+    "region_type": "modal",
+    "layout_position": "overlay",
+    "visible_conditions": [
+      {
+        "role": [
+          "ROLE_001"
+        ],
+        "state": null
+      }
+    ],
+    "meta": {
+      "confidence": 0.92
+    }
+  },
+  {
+    "id": "REG_011",
+    "type": "REGION",
+    "layer": "L2",
+    "name": "侧边栏品牌区",
+    "page_id": "PAGE_004",
+    "module_id": "MOD_002",
+    "region_type": "sidebar",
+    "layout_position": "left",
+    "visible_conditions": [
+      {
+        "role": [
+          "ROLE_001"
+        ],
+        "state": null
+      }
+    ],
+    "meta": {
+      "confidence": 0.92
+    }
+  },
+  {
+    "id": "REG_012",
+    "type": "REGION",
+    "layer": "L2",
+    "name": "侧边栏菜单区",
+    "page_id": "PAGE_004",
+    "module_id": "MOD_002",
+    "region_type": "sidebar",
+    "layout_position": "left",
+    "visible_conditions": [
+      {
+        "role": [
+          "ROLE_001"
+        ],
+        "state": null
+      }
+    ],
+    "meta": {
+      "confidence": 0.92
+    }
+  },
+  {
+    "id": "REG_013",
+    "type": "REGION",
+    "layer": "L2",
+    "name": "面包屑区",
+    "page_id": "PAGE_004",
+    "module_id": "MOD_002",
+    "region_type": "search_bar",
+    "layout_position": "top",
+    "visible_conditions": [
+      {
+        "role": [
+          "ROLE_001"
+        ],
+        "state": null
+      }
+    ],
+    "meta": {
+      "confidence": 0.92
+    }
+  },
+  {
+    "id": "REG_014",
+    "type": "REGION",
+    "layer": "L2",
+    "name": "内容区",
+    "page_id": "PAGE_004",
+    "module_id": "MOD_002",
+    "region_type": "tab_panel",
+    "layout_position": "center",
+    "visible_conditions": [
+      {
+        "role": [
+          "ROLE_001"
+        ],
+        "state": null
+      }
+    ],
+    "meta": {
+      "confidence": 0.92
+    }
+  },
+  {
+    "id": "ENT_001",
+    "type": "ENTITY",
+    "layer": "L1",
+    "name": "Module",
+    "display_name": "文档模块",
+    "table_name": null,
+    "managed_by_module": "MOD_004",
+    "fields": [
+      {
+        "name": "id",
+        "label": "模块ID",
+        "type": "String",
+        "required": true,
+        "visible_in_form": true,
+        "visible_in_list": true
+      },
+      {
+        "name": "name",
+        "label": "模块名称",
+        "type": "String",
+        "required": true,
+        "visible_in_form": true,
+        "visible_in_list": true
+      },
+      {
+        "name": "summary",
+        "label": "模块简介",
+        "type": "String",
+        "required": true,
+        "visible_in_form": true,
+        "visible_in_list": true
+      },
+      {
+        "name": "status",
+        "label": "模块状态",
+        "type": "String",
+        "required": true,
+        "enum_values": [
+          {
+            "value": "active",
+            "label": "已上线"
+          },
+          {
+            "value": "reference",
+            "label": "参考资料"
+          },
+          {
+            "value": "planned",
+            "label": "待完善"
+          }
+        ],
+        "visible_in_form": true,
+        "visible_in_list": true
+      },
+      {
+        "name": "icon",
+        "label": "模块图标",
+        "type": "String",
+        "required": false,
+        "visible_in_form": true,
+        "visible_in_list": false
+      },
+      {
+        "name": "chapters",
+        "label": "章节数组",
+        "type": "Array",
+        "required": true,
+        "visible_in_form": true,
+        "visible_in_list": false
+      }
+    ],
+    "meta": {
+      "confidence": 0.97
+    }
+  },
+  {
+    "id": "ENT_002",
+    "type": "ENTITY",
+    "layer": "L1",
+    "name": "Chapter",
+    "display_name": "章节",
+    "table_name": null,
+    "managed_by_module": "MOD_004",
+    "fields": [
+      {
+        "name": "id",
+        "label": "章节ID",
+        "type": "String",
+        "required": true,
+        "visible_in_form": true,
+        "visible_in_list": true
+      },
+      {
+        "name": "title",
+        "label": "章节标题",
+        "type": "String",
+        "required": true,
+        "visible_in_form": true,
+        "visible_in_list": true
+      },
+      {
+        "name": "summary",
+        "label": "章节简介",
+        "type": "String",
+        "required": false,
+        "visible_in_form": true,
+        "visible_in_list": true
+      },
+      {
+        "name": "steps",
+        "label": "步骤数组",
+        "type": "Array",
+        "required": true,
+        "visible_in_form": true,
+        "visible_in_list": false
+      }
+    ],
+    "meta": {
+      "confidence": 0.97
+    }
+  },
+  {
+    "id": "ENT_003",
+    "type": "ENTITY",
+    "layer": "L1",
+    "name": "Step",
+    "display_name": "操作步骤",
+    "table_name": null,
+    "managed_by_module": "MOD_004",
+    "fields": [
+      {
+        "name": "id",
+        "label": "步骤ID",
+        "type": "String",
+        "required": true,
+        "visible_in_form": true,
+        "visible_in_list": false
+      },
+      {
+        "name": "title",
+        "label": "步骤标题",
+        "type": "String",
+        "required": true,
+        "visible_in_form": true,
+        "visible_in_list": true
+      },
+      {
+        "name": "menu",
+        "label": "菜单路径",
+        "type": "String",
+        "required": true,
+        "visible_in_form": true,
+        "visible_in_list": true
+      },
+      {
+        "name": "desc",
+        "label": "操作说明",
+        "type": "String",
+        "required": true,
+        "visible_in_form": true,
+        "visible_in_list": true
+      },
+      {
+        "name": "points",
+        "label": "注意事项",
+        "type": "Array",
+        "required": false,
+        "visible_in_form": true,
+        "visible_in_list": false
+      },
+      {
+        "name": "images",
+        "label": "操作截图",
+        "type": "Array",
+        "required": false,
+        "visible_in_form": true,
+        "visible_in_list": false
+      }
+    ],
+    "meta": {
+      "confidence": 0.97
+    }
+  },
+  {
+    "id": "ENT_004",
+    "type": "ENTITY",
+    "layer": "L1",
+    "name": "systemMeta",
+    "display_name": "系统元信息",
+    "table_name": null,
+    "managed_by_module": "MOD_004",
+    "fields": [
+      {
+        "name": "system",
+        "label": "系统名",
+        "type": "String",
+        "required": true
+      },
+      {
+        "name": "title",
+        "label": "文档标题",
+        "type": "String",
+        "required": true
+      },
+      {
+        "name": "subtitle",
+        "label": "副标题",
+        "type": "String",
+        "required": true
+      },
+      {
+        "name": "version",
+        "label": "版本号",
+        "type": "String",
+        "required": true
+      },
+      {
+        "name": "updatedAt",
+        "label": "更新日期",
+        "type": "String",
+        "required": true
+      }
+    ],
+    "meta": {
+      "confidence": 0.97
+    }
+  },
+  {
+    "id": "ENT_005",
+    "type": "ENTITY",
+    "layer": "L1",
+    "name": "docStats",
+    "display_name": "文档统计",
+    "table_name": null,
+    "managed_by_module": "MOD_001",
+    "fields": [
+      {
+        "name": "modules",
+        "label": "模块总数",
+        "type": "Integer",
+        "required": true
+      },
+      {
+        "name": "active",
+        "label": "已上线模块数",
+        "type": "Integer",
+        "required": true
+      },
+      {
+        "name": "reference",
+        "label": "参考资料数",
+        "type": "Integer",
+        "required": true
+      },
+      {
+        "name": "planned",
+        "label": "待完善数",
+        "type": "Integer",
+        "required": true
+      },
+      {
+        "name": "chapters",
+        "label": "章节总数",
+        "type": "Integer",
+        "required": true
+      },
+      {
+        "name": "steps",
+        "label": "操作步骤总数",
+        "type": "Integer",
+        "required": true
+      },
+      {
+        "name": "images",
+        "label": "操作截图总数",
+        "type": "Integer",
+        "required": true
+      }
+    ],
+    "meta": {
+      "confidence": 0.97
+    }
+  },
+  {
+    "id": "ROLE_001",
+    "type": "ROLE",
+    "layer": "L0",
+    "name": "visitor",
+    "display_name": "文档读者（访客）",
+    "description": "任何打开文档站的人员，无需登录，全站只读",
+    "login_accessible": false,
+    "permission_scope": "all",
+    "inherits_from": null,
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "ELM_001",
+    "type": "ELEMENT",
+    "layer": "L3",
+    "name": "统计卡片",
+    "element_type": "stat_card",
+    "label": "统计卡片（已上线模块/章节总数/操作步骤/操作截图）",
+    "region_id": "REG_001",
+    "function_id": "FN_001",
+    "selector": null,
+    "states": {
+      "normal": {
+        "enabled": true,
+        "visible": true
+      },
+      "disabled": {
+        "enabled": false,
+        "visible": true,
+        "condition": null
+      },
+      "hidden": {
+        "enabled": false,
+        "visible": false,
+        "condition": null
+      }
+    },
+    "tooltip": null,
+    "shortcut": null,
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "ELM_002",
+    "type": "ELEMENT",
+    "layer": "L3",
+    "name": "模块进度表「查看」链接",
+    "element_type": "link",
+    "label": "查看",
+    "region_id": "REG_002",
+    "function_id": "FN_003",
+    "selector": null,
+    "states": {
+      "normal": {
+        "enabled": true,
+        "visible": true
+      },
+      "disabled": {
+        "enabled": false,
+        "visible": true,
+        "condition": null
+      },
+      "hidden": {
+        "enabled": false,
+        "visible": false,
+        "condition": null
+      }
+    },
+    "tooltip": null,
+    "shortcut": null,
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "ELM_003",
+    "type": "ELEMENT",
+    "layer": "L3",
+    "name": "侧边栏「工作台」入口",
+    "element_type": "menu_item",
+    "label": "工作台",
+    "region_id": "REG_012",
+    "function_id": "FN_006",
+    "selector": null,
+    "states": {
+      "normal": {
+        "enabled": true,
+        "visible": true
+      },
+      "disabled": {
+        "enabled": false,
+        "visible": true,
+        "condition": null
+      },
+      "hidden": {
+        "enabled": false,
+        "visible": false,
+        "condition": null
+      }
+    },
+    "tooltip": null,
+    "shortcut": null,
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "ELM_004",
+    "type": "ELEMENT",
+    "layer": "L3",
+    "name": "侧边栏模块行",
+    "element_type": "menu_item",
+    "label": "模块名称行（点击展开/收起章节）",
+    "region_id": "REG_012",
+    "function_id": "FN_004",
+    "selector": null,
+    "states": {
+      "normal": {
+        "enabled": true,
+        "visible": true
+      },
+      "disabled": {
+        "enabled": false,
+        "visible": true,
+        "condition": null
+      },
+      "hidden": {
+        "enabled": false,
+        "visible": false,
+        "condition": null
+      }
+    },
+    "tooltip": null,
+    "shortcut": null,
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "ELM_005",
+    "type": "ELEMENT",
+    "layer": "L3",
+    "name": "「展开」「收起」链接",
+    "element_type": "link",
+    "label": "展开 / 收起",
+    "region_id": "REG_012",
+    "function_id": "FN_005",
+    "selector": null,
+    "states": {
+      "normal": {
+        "enabled": true,
+        "visible": true
+      },
+      "disabled": {
+        "enabled": false,
+        "visible": true,
+        "condition": null
+      },
+      "hidden": {
+        "enabled": false,
+        "visible": false,
+        "condition": null
+      }
+    },
+    "tooltip": null,
+    "shortcut": null,
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "ELM_006",
+    "type": "ELEMENT",
+    "layer": "L3",
+    "name": "章节行",
+    "element_type": "link",
+    "label": "章节标题行（序号+标题+简介+步骤数）",
+    "region_id": "REG_005",
+    "function_id": "FN_008",
+    "selector": null,
+    "states": {
+      "normal": {
+        "enabled": true,
+        "visible": true
+      },
+      "disabled": {
+        "enabled": false,
+        "visible": true,
+        "condition": null
+      },
+      "hidden": {
+        "enabled": false,
+        "visible": false,
+        "condition": null
+      }
+    },
+    "tooltip": null,
+    "shortcut": null,
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "ELM_007",
+    "type": "ELEMENT",
+    "layer": "L3",
+    "name": "步骤截图",
+    "element_type": "img",
+    "label": "操作截图（loading=lazy，限宽显示）",
+    "region_id": "REG_008",
+    "function_id": "FN_011",
+    "selector": null,
+    "states": {
+      "normal": {
+        "enabled": true,
+        "visible": true
+      },
+      "disabled": {
+        "enabled": false,
+        "visible": true,
+        "condition": null
+      },
+      "hidden": {
+        "enabled": false,
+        "visible": false,
+        "condition": null
+      }
+    },
+    "tooltip": null,
+    "shortcut": null,
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "ELM_008",
+    "type": "ELEMENT",
+    "layer": "L3",
+    "name": "灯箱大图",
+    "element_type": "modal",
+    "label": "截图大图 + 「点击任意处或按 Esc 关闭」提示",
+    "region_id": "REG_010",
+    "function_id": "FN_012",
+    "selector": null,
+    "states": {
+      "normal": {
+        "enabled": true,
+        "visible": true
+      },
+      "disabled": {
+        "enabled": false,
+        "visible": true,
+        "condition": null
+      },
+      "hidden": {
+        "enabled": false,
+        "visible": false,
+        "condition": null
+      }
+    },
+    "tooltip": null,
+    "shortcut": null,
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "ELM_009",
+    "type": "ELEMENT",
+    "layer": "L3",
+    "name": "上一节/下一节按钮",
+    "element_type": "button",
+    "label": "上一节 / 下一节",
+    "region_id": "REG_009",
+    "function_id": "FN_013",
+    "selector": null,
+    "states": {
+      "normal": {
+        "enabled": true,
+        "visible": true
+      },
+      "disabled": {
+        "enabled": false,
+        "visible": true,
+        "condition": null
+      },
+      "hidden": {
+        "enabled": false,
+        "visible": false,
+        "condition": null
+      }
+    },
+    "tooltip": null,
+    "shortcut": null,
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "ELM_010",
+    "type": "ELEMENT",
+    "layer": "L3",
+    "name": "「返回文档首页」按钮",
+    "element_type": "button",
+    "label": "返回文档首页",
+    "region_id": "REG_006",
+    "function_id": "FN_009",
+    "selector": null,
+    "states": {
+      "normal": {
+        "enabled": true,
+        "visible": true
+      },
+      "disabled": {
+        "enabled": false,
+        "visible": true,
+        "condition": null
+      },
+      "hidden": {
+        "enabled": false,
+        "visible": false,
+        "condition": null
+      }
+    },
+    "tooltip": null,
+    "shortcut": null,
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "ELM_011",
+    "type": "ELEMENT",
+    "layer": "L3",
+    "name": "「返回《模块》章节列表」按钮",
+    "element_type": "button",
+    "label": "返回《XX》章节列表",
+    "region_id": "REG_008",
+    "function_id": "FN_010",
+    "selector": null,
+    "states": {
+      "normal": {
+        "enabled": true,
+        "visible": true
+      },
+      "disabled": {
+        "enabled": false,
+        "visible": true,
+        "condition": null
+      },
+      "hidden": {
+        "enabled": false,
+        "visible": false,
+        "condition": null
+      }
+    },
+    "tooltip": null,
+    "shortcut": null,
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "FN_001",
+    "type": "FUNCTION",
+    "layer": "L3",
+    "name": "查看文档统计",
+    "region_id": "REG_001",
+    "page_id": null,
+    "module_id": "MOD_001",
+    "function_type": "read",
+    "target_entity_id": "ENT_005",
+    "opens_page_id": null,
+    "preconditions": [],
+    "risk_level": "low",
+    "requires_confirmation": false,
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "FN_002",
+    "type": "FUNCTION",
+    "layer": "L3",
+    "name": "查看模块文档进度表",
+    "region_id": "REG_002",
+    "page_id": null,
+    "module_id": "MOD_001",
+    "function_type": "read",
+    "target_entity_id": "ENT_001",
+    "opens_page_id": null,
+    "preconditions": [],
+    "risk_level": "low",
+    "requires_confirmation": false,
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "FN_003",
+    "type": "FUNCTION",
+    "layer": "L3",
+    "name": "从进度表跳转模块概览",
+    "region_id": "REG_002",
+    "page_id": null,
+    "module_id": "MOD_001",
+    "function_type": "query",
+    "target_entity_id": "ENT_001",
+    "opens_page_id": "PAGE_002",
+    "preconditions": [],
+    "risk_level": "low",
+    "requires_confirmation": false,
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "FN_004",
+    "type": "FUNCTION",
+    "layer": "L3",
+    "name": "展开/收起模块章节",
+    "region_id": "REG_012",
+    "page_id": null,
+    "module_id": "MOD_002",
+    "function_type": "query",
+    "target_entity_id": "ENT_002",
+    "opens_page_id": null,
+    "preconditions": [],
+    "risk_level": "low",
+    "requires_confirmation": false,
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "FN_005",
+    "type": "FUNCTION",
+    "layer": "L3",
+    "name": "一键展开/收起全部分类",
+    "region_id": "REG_012",
+    "page_id": null,
+    "module_id": "MOD_002",
+    "function_type": "config",
+    "target_entity_id": "ENT_002",
+    "opens_page_id": null,
+    "preconditions": [],
+    "risk_level": "low",
+    "requires_confirmation": false,
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "FN_006",
+    "type": "FUNCTION",
+    "layer": "L3",
+    "name": "返回工作台",
+    "region_id": "REG_012",
+    "page_id": null,
+    "module_id": "MOD_002",
+    "function_type": "query",
+    "target_entity_id": "ENT_005",
+    "opens_page_id": "PAGE_001",
+    "preconditions": [],
+    "risk_level": "low",
+    "requires_confirmation": false,
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "FN_007",
+    "type": "FUNCTION",
+    "layer": "L3",
+    "name": "浏览章节目录",
+    "region_id": "REG_005",
+    "page_id": null,
+    "module_id": "MOD_002",
+    "function_type": "read",
+    "target_entity_id": "ENT_002",
+    "opens_page_id": null,
+    "preconditions": [],
+    "risk_level": "low",
+    "requires_confirmation": false,
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "FN_008",
+    "type": "FUNCTION",
+    "layer": "L3",
+    "name": "进入章节详情",
+    "region_id": "REG_005",
+    "page_id": null,
+    "module_id": "MOD_002",
+    "function_type": "query",
+    "target_entity_id": "ENT_002",
+    "opens_page_id": "PAGE_003",
+    "preconditions": [],
+    "risk_level": "low",
+    "requires_confirmation": false,
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "FN_009",
+    "type": "FUNCTION",
+    "layer": "L3",
+    "name": "查看待完善模块占位提示",
+    "region_id": "REG_006",
+    "page_id": null,
+    "module_id": "MOD_002",
+    "function_type": "read",
+    "target_entity_id": "ENT_001",
+    "opens_page_id": null,
+    "preconditions": [],
+    "risk_level": "low",
+    "requires_confirmation": false,
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "FN_010",
+    "type": "FUNCTION",
+    "layer": "L3",
+    "name": "阅读步骤操作说明",
+    "region_id": "REG_008",
+    "page_id": null,
+    "module_id": "MOD_003",
+    "function_type": "read",
+    "target_entity_id": "ENT_003",
+    "opens_page_id": null,
+    "preconditions": [],
+    "risk_level": "low",
+    "requires_confirmation": false,
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "FN_011",
+    "type": "FUNCTION",
+    "layer": "L3",
+    "name": "查看步骤操作截图",
+    "region_id": "REG_008",
+    "page_id": null,
+    "module_id": "MOD_003",
+    "function_type": "read",
+    "target_entity_id": "ENT_003",
+    "opens_page_id": null,
+    "preconditions": [],
+    "risk_level": "low",
+    "requires_confirmation": false,
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "FN_012",
+    "type": "FUNCTION",
+    "layer": "L3",
+    "name": "点击截图查看大图（灯箱）",
+    "region_id": "REG_010",
+    "page_id": null,
+    "module_id": "MOD_003",
+    "function_type": "read",
+    "target_entity_id": "ENT_003",
+    "opens_page_id": null,
+    "preconditions": [],
+    "risk_level": "low",
+    "requires_confirmation": false,
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "FN_013",
+    "type": "FUNCTION",
+    "layer": "L3",
+    "name": "上一节/下一节跨模块导航",
+    "region_id": "REG_009",
+    "page_id": null,
+    "module_id": "MOD_003",
+    "function_type": "query",
+    "target_entity_id": "ENT_002",
+    "opens_page_id": "PAGE_003",
+    "preconditions": [],
+    "risk_level": "low",
+    "requires_confirmation": false,
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "FN_014",
+    "type": "FUNCTION",
+    "layer": "L3",
+    "name": "新增文档模块文件",
+    "region_id": null,
+    "page_id": null,
+    "module_id": "MOD_004",
+    "function_type": "create",
+    "target_entity_id": "ENT_001",
+    "opens_page_id": null,
+    "preconditions": [],
+    "risk_level": "medium",
+    "requires_confirmation": false,
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "FN_015",
+    "type": "FUNCTION",
+    "layer": "L3",
+    "name": "注册模块到索引",
+    "region_id": null,
+    "page_id": null,
+    "module_id": "MOD_004",
+    "function_type": "update",
+    "target_entity_id": "ENT_001",
+    "opens_page_id": null,
+    "preconditions": [],
+    "risk_level": "medium",
+    "requires_confirmation": false,
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "FN_016",
+    "type": "FUNCTION",
+    "layer": "L3",
+    "name": "放置并引用操作截图",
+    "region_id": null,
+    "page_id": null,
+    "module_id": "MOD_004",
+    "function_type": "create",
+    "target_entity_id": "ENT_003",
+    "opens_page_id": null,
+    "preconditions": [],
+    "risk_level": "medium",
+    "requires_confirmation": false,
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "FN_017",
+    "type": "FUNCTION",
+    "layer": "L3",
+    "name": "本地运行文档站",
+    "region_id": null,
+    "page_id": null,
+    "module_id": "MOD_004",
+    "function_type": "config",
+    "target_entity_id": null,
+    "opens_page_id": null,
+    "preconditions": [],
+    "risk_level": "low",
+    "requires_confirmation": false,
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "FN_018",
+    "type": "FUNCTION",
+    "layer": "L3",
+    "name": "构建与部署",
+    "region_id": null,
+    "page_id": null,
+    "module_id": "MOD_004",
+    "function_type": "config",
+    "target_entity_id": null,
+    "opens_page_id": null,
+    "preconditions": [],
+    "risk_level": "medium",
+    "requires_confirmation": false,
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "STEP_001",
+    "type": "STEP",
+    "layer": "L4",
+    "name": "点击侧边栏「工作台」",
+    "function_id": "FN_001",
+    "step_index": 1,
+    "step_type": "navigation",
+    "action_type": "click",
+    "target_element_id": "ELM_003",
+    "description": "点击侧边栏「工作台」",
+    "expected_result": "进入文档站首页，看到四张统计卡",
+    "next_step_ids": [
+      "STEP_002"
+    ],
+    "branch_on_condition": null,
+    "error_to_step_id": null,
+    "diagram_node_label": "点击侧边栏「工作台」",
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "STEP_002",
+    "type": "STEP",
+    "layer": "L4",
+    "name": "查看统计卡数值",
+    "function_id": "FN_001",
+    "step_index": 2,
+    "step_type": "feedback",
+    "action_type": null,
+    "target_element_id": null,
+    "description": "查看统计卡数值",
+    "expected_result": "已上线模块/章节总数/操作步骤/操作截图四个数字随内容自动更新",
+    "next_step_ids": [],
+    "branch_on_condition": null,
+    "error_to_step_id": null,
+    "diagram_node_label": "查看统计卡数值",
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "STEP_003",
+    "type": "STEP",
+    "layer": "L4",
+    "name": "点击侧边栏「工作台」",
+    "function_id": "FN_002",
+    "step_index": 1,
+    "step_type": "navigation",
+    "action_type": "click",
+    "target_element_id": "ELM_003",
+    "description": "点击侧边栏「工作台」",
+    "expected_result": "页面展示模块文档进度表",
+    "next_step_ids": [
+      "STEP_004"
+    ],
+    "branch_on_condition": null,
+    "error_to_step_id": null,
+    "diagram_node_label": "点击侧边栏「工作台」",
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "STEP_004",
+    "type": "STEP",
+    "layer": "L4",
+    "name": "浏览进度表各行",
+    "function_id": "FN_002",
+    "step_index": 2,
+    "step_type": "action",
+    "action_type": null,
+    "target_element_id": null,
+    "description": "浏览进度表各行",
+    "expected_result": "每行展示模块名称、状态标签（已上线/参考/待完善）、章节数与说明",
+    "next_step_ids": [],
+    "branch_on_condition": null,
+    "error_to_step_id": null,
+    "diagram_node_label": "浏览进度表各行",
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "STEP_005",
+    "type": "STEP",
+    "layer": "L4",
+    "name": "点击进度表行内「查看」",
+    "function_id": "FN_003",
+    "step_index": 1,
+    "step_type": "action",
+    "action_type": "click",
+    "target_element_id": "ELM_002",
+    "description": "点击进度表行内「查看」",
+    "expected_result": "跳转到对应模块的概览页",
+    "next_step_ids": [],
+    "branch_on_condition": null,
+    "error_to_step_id": null,
+    "diagram_node_label": "点击进度表行内「查看」",
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "STEP_006",
+    "type": "STEP",
+    "layer": "L4",
+    "name": "点击侧边栏模块行",
+    "function_id": "FN_004",
+    "step_index": 1,
+    "step_type": "action",
+    "action_type": "click",
+    "target_element_id": "ELM_004",
+    "description": "点击侧边栏模块行",
+    "expected_result": "该模块章节二级列表展开/收起；所在模块自动展开",
+    "next_step_ids": [],
+    "branch_on_condition": null,
+    "error_to_step_id": null,
+    "diagram_node_label": "点击侧边栏模块行",
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "STEP_007",
+    "type": "STEP",
+    "layer": "L4",
+    "name": "点击「展开」或「收起」",
+    "function_id": "FN_005",
+    "step_index": 1,
+    "step_type": "action",
+    "action_type": "click",
+    "target_element_id": "ELM_005",
+    "description": "点击「展开」或「收起」",
+    "expected_result": "全部分类一次性展开或收起",
+    "next_step_ids": [],
+    "branch_on_condition": null,
+    "error_to_step_id": null,
+    "diagram_node_label": "点击「展开」或「收起」",
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "STEP_008",
+    "type": "STEP",
+    "layer": "L4",
+    "name": "点击侧边栏「工作台」",
+    "function_id": "FN_006",
+    "step_index": 1,
+    "step_type": "navigation",
+    "action_type": "click",
+    "target_element_id": "ELM_003",
+    "description": "点击侧边栏「工作台」",
+    "expected_result": "返回工作台首页",
+    "next_step_ids": [],
+    "branch_on_condition": null,
+    "error_to_step_id": null,
+    "diagram_node_label": "点击侧边栏「工作台」",
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "STEP_009",
+    "type": "STEP",
+    "layer": "L4",
+    "name": "进入模块概览页",
+    "function_id": "FN_007",
+    "step_index": 1,
+    "step_type": "navigation",
+    "action_type": "click",
+    "target_element_id": "ELM_006",
+    "description": "进入模块概览页",
+    "expected_result": "展示该模块头部信息与章节目录",
+    "next_step_ids": [
+      "STEP_010"
+    ],
+    "branch_on_condition": null,
+    "error_to_step_id": null,
+    "diagram_node_label": "进入模块概览页",
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "STEP_010",
+    "type": "STEP",
+    "layer": "L4",
+    "name": "浏览章节目录",
+    "function_id": "FN_007",
+    "step_index": 2,
+    "step_type": "action",
+    "action_type": null,
+    "target_element_id": null,
+    "description": "浏览章节目录",
+    "expected_result": "每行展示序号、章节标题、简介与步骤数",
+    "next_step_ids": [],
+    "branch_on_condition": null,
+    "error_to_step_id": null,
+    "diagram_node_label": "浏览章节目录",
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "STEP_011",
+    "type": "STEP",
+    "layer": "L4",
+    "name": "点击章节目录行",
+    "function_id": "FN_008",
+    "step_index": 1,
+    "step_type": "navigation",
+    "action_type": "click",
+    "target_element_id": "ELM_006",
+    "description": "点击章节目录行",
+    "expected_result": "进入该章节的详情页",
+    "next_step_ids": [],
+    "branch_on_condition": null,
+    "error_to_step_id": null,
+    "diagram_node_label": "点击章节目录行",
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "STEP_012",
+    "type": "STEP",
+    "layer": "L4",
+    "name": "查看占位提示",
+    "function_id": "FN_009",
+    "step_index": 1,
+    "step_type": "feedback",
+    "action_type": null,
+    "target_element_id": null,
+    "description": "查看占位提示",
+    "expected_result": "显示「该模块文档待完善」与补充说明入口",
+    "next_step_ids": [
+      "STEP_013"
+    ],
+    "branch_on_condition": null,
+    "error_to_step_id": null,
+    "diagram_node_label": "查看占位提示",
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "STEP_013",
+    "type": "STEP",
+    "layer": "L4",
+    "name": "进入章节详情页",
+    "function_id": "FN_010",
+    "step_index": 1,
+    "step_type": "navigation",
+    "action_type": "click",
+    "target_element_id": "ELM_006",
+    "description": "进入章节详情页",
+    "expected_result": "展示章节标题与全部步骤",
+    "next_step_ids": [
+      "STEP_014"
+    ],
+    "branch_on_condition": null,
+    "error_to_step_id": null,
+    "diagram_node_label": "进入章节详情页",
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "STEP_014",
+    "type": "STEP",
+    "layer": "L4",
+    "name": "阅读步骤内容",
+    "function_id": "FN_010",
+    "step_index": 2,
+    "step_type": "action",
+    "action_type": null,
+    "target_element_id": null,
+    "description": "阅读步骤内容",
+    "expected_result": "每步含序号、标题、菜单路径、操作说明与注意事项",
+    "next_step_ids": [
+      "STEP_015"
+    ],
+    "branch_on_condition": null,
+    "error_to_step_id": null,
+    "diagram_node_label": "阅读步骤内容",
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "STEP_015",
+    "type": "STEP",
+    "layer": "L4",
+    "name": "查看步骤内截图",
+    "function_id": "FN_011",
+    "step_index": 1,
+    "step_type": "action",
+    "action_type": null,
+    "target_element_id": "ELM_007",
+    "description": "查看步骤内截图",
+    "expected_result": "截图限宽展示，下方有图注（图 x.y-z 标题）",
+    "next_step_ids": [],
+    "branch_on_condition": null,
+    "error_to_step_id": null,
+    "diagram_node_label": "查看步骤内截图",
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "STEP_016",
+    "type": "STEP",
+    "layer": "L4",
+    "name": "点击截图",
+    "function_id": "FN_012",
+    "step_index": 1,
+    "step_type": "action",
+    "action_type": "click",
+    "target_element_id": "ELM_007",
+    "description": "点击截图",
+    "expected_result": "弹出大图灯箱，显示原图",
+    "next_step_ids": [
+      "STEP_017"
+    ],
+    "branch_on_condition": null,
+    "error_to_step_id": null,
+    "diagram_node_label": "点击截图",
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "STEP_017",
+    "type": "STEP",
+    "layer": "L4",
+    "name": "点击任意处或按 Esc",
+    "function_id": "FN_012",
+    "step_index": 2,
+    "step_type": "action",
+    "action_type": null,
+    "target_element_id": "ELM_008",
+    "description": "点击任意处或按 Esc",
+    "expected_result": "关闭灯箱，返回章节页",
+    "next_step_ids": [],
+    "branch_on_condition": null,
+    "error_to_step_id": null,
+    "diagram_node_label": "点击任意处或按 Esc",
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "STEP_018",
+    "type": "STEP",
+    "layer": "L4",
+    "name": "点击「下一节」",
+    "function_id": "FN_013",
+    "step_index": 1,
+    "step_type": "action",
+    "action_type": "click",
+    "target_element_id": "ELM_009",
+    "description": "点击「下一节」",
+    "expected_result": "跳转下一模块的下一章节，可连续阅读",
+    "next_step_ids": [
+      "STEP_019"
+    ],
+    "branch_on_condition": null,
+    "error_to_step_id": null,
+    "diagram_node_label": "点击「下一节」",
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "STEP_019",
+    "type": "STEP",
+    "layer": "L4",
+    "name": "点击「上一节」",
+    "function_id": "FN_013",
+    "step_index": 2,
+    "step_type": "action",
+    "action_type": "click",
+    "target_element_id": "ELM_009",
+    "description": "点击「上一节」",
+    "expected_result": "返回上一章节",
+    "next_step_ids": [],
+    "branch_on_condition": null,
+    "error_to_step_id": null,
+    "diagram_node_label": "点击「上一节」",
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "STEP_020",
+    "type": "STEP",
+    "layer": "L4",
+    "name": "复制 src/docs/growth.js 为模板",
+    "function_id": "FN_014",
+    "step_index": 1,
+    "step_type": "input",
+    "action_type": null,
+    "target_element_id": null,
+    "description": "复制 src/docs/growth.js 为模板",
+    "expected_result": "修改 default 导出的 id/name/summary/status/chapters",
+    "next_step_ids": [],
+    "branch_on_condition": null,
+    "error_to_step_id": null,
+    "diagram_node_label": "复制 src/docs/growth.js 为模板",
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "STEP_021",
+    "type": "STEP",
+    "layer": "L4",
+    "name": "在 src/docs/index.js 中 import 并加入 modules 数组",
+    "function_id": "FN_015",
+    "step_index": 1,
+    "step_type": "input",
+    "action_type": null,
+    "target_element_id": null,
+    "description": "在 src/docs/index.js 中 import 并加入 modules 数组",
+    "expected_result": "顺序即侧边栏与首页展示顺序",
+    "next_step_ids": [],
+    "branch_on_condition": null,
+    "error_to_step_id": null,
+    "diagram_node_label": "在 src/docs/index.js 中 import 并加入 modules 数组",
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "STEP_022",
+    "type": "STEP",
+    "layer": "L4",
+    "name": "将截图复制到 src/assets/docs/",
+    "function_id": "FN_016",
+    "step_index": 1,
+    "step_type": "input",
+    "action_type": null,
+    "target_element_id": null,
+    "description": "将截图复制到 src/assets/docs/",
+    "expected_result": "在模块文件顶部 import 后在 steps.images 中引用",
+    "next_step_ids": [],
+    "branch_on_condition": null,
+    "error_to_step_id": null,
+    "diagram_node_label": "将截图复制到 src/assets/docs/",
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "STEP_023",
+    "type": "STEP",
+    "layer": "L4",
+    "name": "双击「一键启动.bat」或 npm run dev",
+    "function_id": "FN_017",
+    "step_index": 1,
+    "step_type": "action",
+    "action_type": null,
+    "target_element_id": null,
+    "description": "双击「一键启动.bat」或 npm run dev",
+    "expected_result": "浏览器访问 http://localhost:5173",
+    "next_step_ids": [],
+    "branch_on_condition": null,
+    "error_to_step_id": null,
+    "diagram_node_label": "双击「一键启动.bat」或 npm run dev",
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  {
+    "id": "STEP_024",
+    "type": "STEP",
+    "layer": "L4",
+    "name": "执行 npm run build",
+    "function_id": "FN_018",
+    "step_index": 1,
+    "step_type": "action",
+    "action_type": null,
+    "target_element_id": null,
+    "description": "执行 npm run build",
+    "expected_result": "产物在 dist/，可放任意子目录或 iframe 嵌入后台",
+    "next_step_ids": [],
+    "branch_on_condition": null,
+    "error_to_step_id": null,
+    "diagram_node_label": "执行 npm run build",
+    "meta": {
+      "confidence": 0.9
+    }
+  }
+]

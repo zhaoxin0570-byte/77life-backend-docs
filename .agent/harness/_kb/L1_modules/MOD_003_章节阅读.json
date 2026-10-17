@@ -1,0 +1,70 @@
+{
+  "module": {
+    "id": "MOD_003",
+    "type": "MODULE",
+    "layer": "L1",
+    "name": "章节阅读与截图查看",
+    "display_name": "章节阅读",
+    "category": "core_business",
+    "sort_order": 3,
+    "description": "按步骤阅读操作说明（菜单路径/操作说明/注意事项），截图点击弹大图，跨模块上一节/下一节连续阅读",
+    "entry_points": [
+      {
+        "menu_path": "侧边栏 > 模块 > 章节",
+        "icon": "news"
+      }
+    ],
+    "status": "active",
+    "meta": {
+      "source_files": [
+        "src/views/DocChapter.vue"
+      ],
+      "confidence": 0.98,
+      "backfill_count": 0
+    }
+  },
+  "pages": [
+    {
+      "id": "PAGE_003",
+      "type": "PAGE",
+      "layer": "L1",
+      "name": "章节详情",
+      "module_id": "MOD_003",
+      "route": "/doc/:moduleId/:chapterId",
+      "component_path": "src/views/DocChapter.vue",
+      "layout": "detail_layout",
+      "tabs": [],
+      "meta": {
+        "confidence": 0.98
+      }
+    }
+  ],
+  "functions": [
+    {
+      "id": "FN_010",
+      "name": "阅读步骤操作说明",
+      "function_type": "read"
+    },
+    {
+      "id": "FN_011",
+      "name": "查看步骤操作截图",
+      "function_type": "read"
+    },
+    {
+      "id": "FN_012",
+      "name": "点击截图查看大图（灯箱）",
+      "function_type": "read"
+    },
+    {
+      "id": "FN_013",
+      "name": "上一节/下一节跨模块导航",
+      "function_type": "query"
+    }
+  ],
+  "entities": [],
+  "high_frequency_scenarios": [],
+  "extracted_at": "2026-10-14T13:37:19+08:00",
+  "source": "EXTRACT 合并提取（fastpath）",
+  "name": "章节阅读与截图查看",
+  "id": "MOD_003"
+}

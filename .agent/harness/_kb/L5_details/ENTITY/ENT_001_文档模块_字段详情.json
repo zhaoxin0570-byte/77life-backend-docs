@@ -1,0 +1,79 @@
+{
+  "entity": {
+    "id": "ENT_001",
+    "type": "ENTITY",
+    "layer": "L1",
+    "name": "Module",
+    "display_name": "文档模块",
+    "table_name": null,
+    "managed_by_module": "MOD_004",
+    "fields": [
+      {
+        "name": "id",
+        "label": "模块ID",
+        "type": "String",
+        "required": true,
+        "visible_in_form": true,
+        "visible_in_list": true
+      },
+      {
+        "name": "name",
+        "label": "模块名称",
+        "type": "String",
+        "required": true,
+        "visible_in_form": true,
+        "visible_in_list": true
+      },
+      {
+        "name": "summary",
+        "label": "模块简介",
+        "type": "String",
+        "required": true,
+        "visible_in_form": true,
+        "visible_in_list": true
+      },
+      {
+        "name": "status",
+        "label": "模块状态",
+        "type": "String",
+        "required": true,
+        "enum_values": [
+          {
+            "value": "active",
+            "label": "已上线"
+          },
+          {
+            "value": "reference",
+            "label": "参考资料"
+          },
+          {
+            "value": "planned",
+            "label": "待完善"
+          }
+        ],
+        "visible_in_form": true,
+        "visible_in_list": true
+      },
+      {
+        "name": "icon",
+        "label": "模块图标",
+        "type": "String",
+        "required": false,
+        "visible_in_form": true,
+        "visible_in_list": false
+      },
+      {
+        "name": "chapters",
+        "label": "章节数组",
+        "type": "Array",
+        "required": true,
+        "visible_in_form": true,
+        "visible_in_list": false
+      }
+    ],
+    "meta": {
+      "confidence": 0.97
+    }
+  },
+  "extracted_at": "2026-10-14T13:37:19+08:00"
+}

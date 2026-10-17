@@ -1,0 +1,84 @@
+{
+  "function": {
+    "id": "FN_007",
+    "type": "FUNCTION",
+    "layer": "L3",
+    "name": "浏览章节目录",
+    "region_id": "REG_005",
+    "page_id": null,
+    "module_id": "MOD_002",
+    "function_type": "read",
+    "target_entity_id": "ENT_002",
+    "opens_page_id": null,
+    "preconditions": [],
+    "risk_level": "low",
+    "requires_confirmation": false,
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  "steps": [
+    {
+      "id": "STEP_009",
+      "type": "STEP",
+      "layer": "L4",
+      "name": "进入模块概览页",
+      "function_id": "FN_007",
+      "step_index": 1,
+      "step_type": "navigation",
+      "action_type": "click",
+      "target_element_id": "ELM_006",
+      "description": "进入模块概览页",
+      "expected_result": "展示该模块头部信息与章节目录",
+      "next_step_ids": [
+        "STEP_010"
+      ],
+      "branch_on_condition": null,
+      "error_to_step_id": null,
+      "diagram_node_label": "进入模块概览页",
+      "meta": {
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "STEP_010",
+      "type": "STEP",
+      "layer": "L4",
+      "name": "浏览章节目录",
+      "function_id": "FN_007",
+      "step_index": 2,
+      "step_type": "action",
+      "action_type": null,
+      "target_element_id": null,
+      "description": "浏览章节目录",
+      "expected_result": "每行展示序号、章节标题、简介与步骤数",
+      "next_step_ids": [],
+      "branch_on_condition": null,
+      "error_to_step_id": null,
+      "diagram_node_label": "浏览章节目录",
+      "meta": {
+        "confidence": 0.9
+      }
+    }
+  ],
+  "flowchart": {
+    "type": "flowchart TD",
+    "nodes": [
+      {
+        "id": "STEP_009",
+        "label": "进入模块概览页"
+      },
+      {
+        "id": "STEP_010",
+        "label": "浏览章节目录"
+      }
+    ],
+    "edges": [
+      {
+        "from": "STEP_009",
+        "to": "STEP_010"
+      }
+    ]
+  },
+  "extracted_at": "2026-10-14T13:37:19+08:00"
+}

@@ -1,0 +1,99 @@
+{
+  "page": {
+    "id": "PAGE_001",
+    "type": "PAGE",
+    "layer": "L1",
+    "name": "工作台",
+    "module_id": "MOD_001",
+    "route": "/",
+    "component_path": "src/views/DocHome.vue",
+    "layout": "dashboard_layout",
+    "tabs": [],
+    "meta": {
+      "confidence": 0.98
+    }
+  },
+  "regions": [
+    {
+      "id": "REG_001",
+      "type": "REGION",
+      "layer": "L2",
+      "name": "统计卡片区",
+      "page_id": "PAGE_001",
+      "module_id": "MOD_001",
+      "region_type": "stat_cards",
+      "layout_position": "top",
+      "visible_conditions": [
+        {
+          "role": [
+            "ROLE_001"
+          ],
+          "state": null
+        }
+      ],
+      "meta": {
+        "confidence": 0.92
+      }
+    },
+    {
+      "id": "REG_002",
+      "type": "REGION",
+      "layer": "L2",
+      "name": "模块进度表区",
+      "page_id": "PAGE_001",
+      "module_id": "MOD_001",
+      "region_type": "data_table",
+      "layout_position": "center",
+      "visible_conditions": [
+        {
+          "role": [
+            "ROLE_001"
+          ],
+          "state": null
+        }
+      ],
+      "meta": {
+        "confidence": 0.92
+      }
+    },
+    {
+      "id": "REG_003",
+      "type": "REGION",
+      "layer": "L2",
+      "name": "关于本文档系统说明区",
+      "page_id": "PAGE_001",
+      "module_id": "MOD_001",
+      "region_type": "detail_form",
+      "layout_position": "bottom",
+      "visible_conditions": [
+        {
+          "role": [
+            "ROLE_001"
+          ],
+          "state": null
+        }
+      ],
+      "meta": {
+        "confidence": 0.92
+      }
+    }
+  ],
+  "region_trigger_relations": [
+    {
+      "from": "REG_001",
+      "to": "FN_001",
+      "predicate": "HAS_FUNCTION"
+    },
+    {
+      "from": "REG_002",
+      "to": "FN_002",
+      "predicate": "HAS_FUNCTION"
+    },
+    {
+      "from": "REG_002",
+      "to": "FN_003",
+      "predicate": "HAS_FUNCTION"
+    }
+  ],
+  "extracted_at": "2026-10-14T13:37:19+08:00"
+}

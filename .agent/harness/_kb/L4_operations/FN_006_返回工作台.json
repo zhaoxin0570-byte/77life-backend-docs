@@ -1,0 +1,53 @@
+{
+  "function": {
+    "id": "FN_006",
+    "type": "FUNCTION",
+    "layer": "L3",
+    "name": "返回工作台",
+    "region_id": "REG_012",
+    "page_id": null,
+    "module_id": "MOD_002",
+    "function_type": "query",
+    "target_entity_id": "ENT_005",
+    "opens_page_id": "PAGE_001",
+    "preconditions": [],
+    "risk_level": "low",
+    "requires_confirmation": false,
+    "meta": {
+      "confidence": 0.9
+    }
+  },
+  "steps": [
+    {
+      "id": "STEP_008",
+      "type": "STEP",
+      "layer": "L4",
+      "name": "点击侧边栏「工作台」",
+      "function_id": "FN_006",
+      "step_index": 1,
+      "step_type": "navigation",
+      "action_type": "click",
+      "target_element_id": "ELM_003",
+      "description": "点击侧边栏「工作台」",
+      "expected_result": "返回工作台首页",
+      "next_step_ids": [],
+      "branch_on_condition": null,
+      "error_to_step_id": null,
+      "diagram_node_label": "点击侧边栏「工作台」",
+      "meta": {
+        "confidence": 0.9
+      }
+    }
+  ],
+  "flowchart": {
+    "type": "flowchart TD",
+    "nodes": [
+      {
+        "id": "STEP_008",
+        "label": "点击侧边栏「工作台」"
+      }
+    ],
+    "edges": []
+  },
+  "extracted_at": "2026-10-14T13:37:19+08:00"
+}
