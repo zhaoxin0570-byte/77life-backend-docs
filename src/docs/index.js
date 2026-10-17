@@ -90,20 +90,31 @@ export const modules = [
   ...framework.filter(m => !OVERRIDDEN_IDS.includes(m.id))
 ]
 
-// 侧边栏一级分类：按模块 status 自动分组
-//   active    → 操作流程（完整操作流程模块）
-//   reference → 参考资料（截图资料）
-//   planned   → 框架待补（章节待完善）
-// 模块内容补齐后将 status 改为 'active'，即自动进入「操作流程」分类
-const MODULE_GROUP_DEFS = [
-  { name: '操作流程', status: 'active' },
-  { name: '参考资料', status: 'reference' },
-  { name: '框架待补', status: 'planned' }
-]
+// 侧边栏一级分类：操作流程 / 功能说明 / 参考资料 / 框架待补
+//   操作流程 —— 端到端完整操作流程（目前仅成长值模块；后续提供的流程文档并入此组）
+//   功能说明 —— 分功能点说明文档（财务、用户）
+//   参考资料 —— 平台模块分析的截图资料
+//   框架待补 —— 章节待完善的占位模块
+// 规则：未在 MODULE_GROUP_OVERRIDES 列出的模块按 status 自动归类
+//   （active→操作流程 / reference→参考资料 / planned→框架待补），
+//   后续新增的完整操作流程模块保持 status: 'active' 即自动进入「操作流程」
+const MODULE_GROUP_OVERRIDES = {
+  finance: '功能说明',
+  user: '功能说明'
+}
 
-export const moduleGroups = MODULE_GROUP_DEFS
-  .map(def => ({ name: def.name, modules: modules.filter(m => m.status === def.status) }))
-  .filter(g => g.modules.length > 0)
+const MODULE_GROUP_ORDER = ['操作流程', '功能说明', '参考资料', '框架待补']
+
+export const moduleGroups = (() => {
+  const statusName = { active: '操作流程', reference: '参考资料', planned: '框架待补' }
+  const map = {}
+  modules.forEach(m => {
+    const name = MODULE_GROUP_OVERRIDES[m.id] || statusName[m.status] || '参考资料'
+    if (!map[name]) map[name] = { name, modules: [] }
+    map[name].modules.push(m)
+  })
+  return MODULE_GROUP_ORDER.filter(n => map[n]).map(n => map[n])
+})()
 
 export function getModule(moduleId) {
   return modules.find(m => m.id === moduleId) || null
