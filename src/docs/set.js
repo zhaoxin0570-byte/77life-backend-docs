@@ -1,5 +1,5 @@
 // 七七生活后台 · 设置
-// 来源：《77平台模块分析》设置/（14 个功能文档、48 张截图）+《七七生活-主题装修.pdf》（12 页截图）
+// 来源：《77平台模块分析》设置/（14 个功能文档、48 张截图）+《七七生活-主题装修.pdf》（21 张原始截图，按功能块拆分）
 import img_c29_theme_1 from '@/assets/docs/set/c29-theme/img001.png'
 import img_c29_theme_2 from '@/assets/docs/set/c29-theme/img002.png'
 import img_c29_theme_3 from '@/assets/docs/set/c29-theme/img003.png'
@@ -48,18 +48,27 @@ import img_l9_express_1 from '@/assets/docs/set/l9-express/img001.png'
 import img_l9_express_2 from '@/assets/docs/set/l9-express/img002.png'
 import img_l9_express_3 from '@/assets/docs/set/l9-express/img003.png'
 import img_l9_express_4 from '@/assets/docs/set/l9-express/img004.png'
-import img_theme_1 from '@/assets/docs/set/theme-decoration/img001.png'
-import img_theme_2 from '@/assets/docs/set/theme-decoration/img002.png'
-import img_theme_3 from '@/assets/docs/set/theme-decoration/img003.png'
-import img_theme_4 from '@/assets/docs/set/theme-decoration/img004.png'
-import img_theme_5 from '@/assets/docs/set/theme-decoration/img005.png'
-import img_theme_6 from '@/assets/docs/set/theme-decoration/img006.png'
-import img_theme_7 from '@/assets/docs/set/theme-decoration/img007.png'
-import img_theme_8 from '@/assets/docs/set/theme-decoration/img008.png'
-import img_theme_9 from '@/assets/docs/set/theme-decoration/img009.png'
-import img_theme_10 from '@/assets/docs/set/theme-decoration/img010.png'
-import img_theme_11 from '@/assets/docs/set/theme-decoration/img011.png'
-import img_theme_12 from '@/assets/docs/set/theme-decoration/img012.png'
+import img_td_basic from '@/assets/docs/set/theme-decoration/td-basic.png'
+import img_td_title from '@/assets/docs/set/theme-decoration/td-title.png'
+import img_td_member from '@/assets/docs/set/theme-decoration/td-member.png'
+import img_td_slideshow from '@/assets/docs/set/theme-decoration/td-slideshow.png'
+import img_td_nav from '@/assets/docs/set/theme-decoration/td-nav.png'
+import img_td_nav_icons from '@/assets/docs/set/theme-decoration/td-nav-icons.png'
+import img_td_nav_style from '@/assets/docs/set/theme-decoration/td-nav-style.png'
+import img_td_nav_spacing from '@/assets/docs/set/theme-decoration/td-nav-spacing.png'
+import img_td_notice from '@/assets/docs/set/theme-decoration/td-notice.png'
+import img_td_ad from '@/assets/docs/set/theme-decoration/td-ad.png'
+import img_td_ad_mode from '@/assets/docs/set/theme-decoration/td-ad-mode.png'
+import img_td_ad_spacing from '@/assets/docs/set/theme-decoration/td-ad-spacing.png'
+import img_td_goods from '@/assets/docs/set/theme-decoration/td-goods.png'
+import img_td_goods_mode from '@/assets/docs/set/theme-decoration/td-goods-mode.png'
+import img_td_goods_type from '@/assets/docs/set/theme-decoration/td-goods-type.png'
+import img_td_goods_add from '@/assets/docs/set/theme-decoration/td-goods-add.png'
+import img_td_copyright from '@/assets/docs/set/theme-decoration/td-copyright.png'
+import img_td_footer from '@/assets/docs/set/theme-decoration/td-footer.png'
+import img_td_h5_top from '@/assets/docs/set/theme-decoration/td-h5-top.png'
+import img_td_h5_mid from '@/assets/docs/set/theme-decoration/td-h5-mid.png'
+import img_td_h5_bottom from '@/assets/docs/set/theme-decoration/td-h5-bottom.png'
 
 export default {
   id: 'set',
@@ -142,7 +151,7 @@ export default {
           menu: '设置 → 主题模板 → 主题装修',
           desc: '进入「设置 → 主题模板 → 主题装修」：左侧模块树、中间手机实时预览、右侧配置表单。基础设置可编辑顶部标题、背景图，以及搜索、热搜和扫一扫是否显示。',
           points: ['右侧修改实时反映到中间手机预览'],
-          images: [img_theme_1]
+          images: [img_td_basic, img_td_title]
         },
         {
           id: 'theme-decoration-s2',
@@ -150,31 +159,34 @@ export default {
           menu: '设置 → 主题模板 → 主题装修',
           desc: '会员信息条可设置是否显示会员、倍数及有效期与跳转界面；顶部幻灯片可设置首页幻灯片播放的数量、图片和顺序，以及每张幻灯片的跳转链接。',
           points: [],
-          images: [img_theme_2]
+          images: [img_td_member, img_td_slideshow]
         },
         {
           id: 'theme-decoration-s3',
           title: '导航栏与导航样式',
           menu: '设置 → 主题模板 → 主题装修',
           desc: '导航栏可更改导航样式与图标：样式支持一行五个、一行四个、一行三个，可设是否白底、上下间距与背景图；每个图标可配标题、角标（热门/推荐/抢购）与产品分类跳转链接。',
-          points: ['图标可配置标题、角标类型与跳转链接，支持重新选择与删除'],
-          images: [img_theme_3]
+          points: [
+            '图标可配置标题、角标类型与跳转链接，支持重新选择与删除',
+            '上下间距可选：显示上下间距/不显示上下间距/不显示上间距/不显示下间距'
+          ],
+          images: [img_td_nav, img_td_nav_icons, img_td_nav_style, img_td_nav_spacing]
         },
         {
           id: 'theme-decoration-s4',
-          title: '间距设置与通知栏',
+          title: '通知栏',
           menu: '设置 → 主题模板 → 主题装修',
-          desc: '间距设置控制模块上下间距的显示方式；通知栏可编辑顶部轮播 Banner 的内容、图标、颜色以及链接。',
-          points: ['间距可选：显示上下间距/不显示上下间距/不显示上间距/不显示下间距'],
-          images: [img_theme_4]
+          desc: '通知栏可编辑顶部轮播 Banner 的内容、图标、颜色以及链接。',
+          points: [],
+          images: [img_td_notice]
         },
         {
           id: 'theme-decoration-s5',
           title: '广告展示与展示模式',
           menu: '设置 → 主题模板 → 主题装修',
-          desc: '广告展示可编辑广告的标题、展示模式、内容、顺序以及跳转链接。',
+          desc: '广告展示可编辑广告的标题、展示模式、内容、顺序以及跳转链接，并可设置内间距与上下间距。',
           points: ['展示模式含：单图/双图/三图/四图/1+2/1+3/2+3/幻灯片模式'],
-          images: [img_theme_5]
+          images: [img_td_ad, img_td_ad_mode, img_td_ad_spacing]
         },
         {
           id: 'theme-decoration-s6',
@@ -182,7 +194,7 @@ export default {
           menu: '设置 → 主题模板 → 主题装修',
           desc: '商品展示可编辑商品展示的标题、链接、展示模式、商品类型以及首页展示的商品。',
           points: ['展示模式含：一行2个/一行1个/大图显示/无限滑动/一行轮播'],
-          images: [img_theme_6, img_theme_7]
+          images: [img_td_goods, img_td_goods_mode]
         },
         {
           id: 'theme-decoration-s7',
@@ -190,7 +202,7 @@ export default {
           menu: '设置 → 主题模板 → 主题装修',
           desc: '商品类型可选预售商品、人物作者、商品、拼购；添加商品时通过商品标题、活动场景、商品分类和商户筛选，查询需要展示的商品并添加。',
           points: [],
-          images: [img_theme_8]
+          images: [img_td_goods_type, img_td_goods_add]
         },
         {
           id: 'theme-decoration-s8',
@@ -198,7 +210,7 @@ export default {
           menu: '设置 → 主题模板 → 主题装修',
           desc: '版权展示可编辑小程序版权所有公司以及跳转链接；页脚导航可编辑导航图标、标题名称以及跳转链接。',
           points: [],
-          images: [img_theme_9]
+          images: [img_td_copyright, img_td_footer]
         },
         {
           id: 'theme-decoration-s9',
@@ -206,7 +218,7 @@ export default {
           menu: '设置 → 主题模板 → 主题装修',
           desc: '配置完成后，H5 首页按主题装修渲染：会员信息条、搜索栏与背景图、导航栏、信息公告通知、广告展示、商品展示、版权展示与页脚导航。',
           points: [],
-          images: [img_theme_10, img_theme_11, img_theme_12]
+          images: [img_td_h5_top, img_td_h5_mid, img_td_h5_bottom]
         }
       ]
     },
