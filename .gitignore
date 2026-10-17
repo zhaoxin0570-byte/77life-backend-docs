@@ -1,0 +1,15 @@
+# 依赖
+node_modules/
+
+# 构建产物
+dist/
+
+# 本地工具/会话数据
+.agent/
+.codebuddy/
+
+# 日志与系统文件
+*.log
+.DS_Store
+Thumbs.db
+desktop.ini
