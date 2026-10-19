@@ -46,6 +46,9 @@ import imgMemberRatio from '@/assets/docs/user/user-member-ratio-1.png'
 import imgMemberStar from '@/assets/docs/user/user-member-star-1.png'
 import imgLevel1 from '@/assets/docs/user/user-level-1.png'
 import imgLevel2 from '@/assets/docs/user/user-level-2.png'
+import imgDiscount1 from '@/assets/docs/user/user-discount-1.png'
+import imgTrial1 from '@/assets/docs/user/user-trial-1.png'
+import imgStarLog1 from '@/assets/docs/user/user-star-log-1.png'
 
 export default {
   id: 'user',
@@ -235,21 +238,51 @@ export default {
   {
     id: 'discount',
     title: '倍数折扣与场景',
-    summary: '倍数折扣与适用场景配置（整理中）',
-    steps: []
-  },
-  {
+    summary: '三倍因子倍数与折扣系数配置表（展示页）',
+    steps: [
+      {
+        id: 'discount-s1',
+        title: '倍数折扣与场景配置表',
+        menu: '用户 → 倍数折扣与场景',
+        desc: '该页面为展示页面，无功能配置。上方「三倍因子倍数配置」展示各星级（普通/一星至五星）的基础倍数、贡献系数、日常与活动专区最高倍数；下方「折扣系数配置」按订单金额区间展示折扣系数与生效时间。',
+        points: [
+          '页面仅供展示，不可配置',
+          '倍增倍数 = release_limit × level_coef × activity_param（纯网上段 × 层级系数 × 活动参数）'
+        ],
+        images: [imgDiscount1]
+      }
+    ]
+    },
+    {
     id: 'trial',
     title: '体验期管理',
-    summary: '新用户 30 天体验期管理（整理中）',
-    steps: []
-  },
-  {
+    summary: '新用户一星会员体验期剩余时间查看',
+    steps: [
+      {
+        id: 'trial-s1',
+        title: '查看体验期剩余时间',
+        menu: '用户 → 体验期管理',
+        desc: '进入「用户 → 体验期管理」查看新用户的一星会员体验期剩余时间，支持按开数日期、体验状态、手机号筛选；列表展示用户昵称、注册时间、过期时间、剩余天数与状态。',
+        points: ['状态含体验中/已失效/已过期'],
+        images: [imgTrial1]
+      }
+    ]
+    },
+    {
     id: 'star-log',
     title: '星级升级记录',
-    summary: '星级升降级历史记录查询（整理中）',
-    steps: []
-  },
+    summary: '用户星级会员升级记录查询',
+    steps: [
+      {
+        id: 'star-log-s1',
+        title: '查看星级升级记录',
+        menu: '用户 → 星级升级记录',
+        desc: '进入「用户 → 星级升级记录」查看用户星级会员升级记录：顶部展示累计升级、扣除贡献、总后台操作等统计；可按升级时间、升级原因、用户筛选，列表展示升级时间、用户、会员、升级前后、升级原因与操作员。',
+        points: ['升级原因含客服兑换升星、违规降级、后台手动调整等'],
+        images: [imgStarLog1]
+      }
+    ]
+    },
     {
       id: 'c1',
       title: '实名认证',
