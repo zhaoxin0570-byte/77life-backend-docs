@@ -8,7 +8,7 @@
         <span v-if="chapter.hidden" class="badge-hidden">已隐藏</span>
       </h1>
       <p class="chapter-summary">{{ chapter.summary }}</p>
-      <p v-if="chapter.hidden" class="chapter-hidden-tip">该菜单对非最高权限账户隐藏，仅最高权限账户 oooooooo 全量开放；隐藏范围详见「菜单隐藏需求」模块。</p>
+      <p v-if="chapter.hidden" class="chapter-hidden-tip">该菜单对非最高权限账户隐藏，仅最高权限账户 oooooooo 全量开放；隐藏范围详见「隐藏的菜单详情」模块。</p>
     </header>
 
     <!-- 步骤内容 -->

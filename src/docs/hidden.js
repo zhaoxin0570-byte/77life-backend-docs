@@ -1,4 +1,4 @@
-// 七七生活后台 · 菜单隐藏需求
+// 七七生活后台 · 隐藏的菜单详情
 // 来源：《七七生活后台隐藏需求.docx》（文字清单 + 77 张截图标注，按文档顺序配对）
 // 规则：以下隐藏不对最高权限账户 oooooooo 生效，oooooooo 账户全量开放
 
@@ -82,7 +82,7 @@ import img_admin_2_1 from '@/assets/docs/hidden/hidden-admin-2-1.png'
 
 export default {
   id: 'hidden',
-  name: '菜单隐藏需求',
+  name: '隐藏的菜单详情',
   icon: 'lock',
   summary: '（参考资料）非最高权限账户需要隐藏的后台菜单清单（最高权限账户 oooooooo 全量开放），每项附截图标注',
   status: 'reference',
