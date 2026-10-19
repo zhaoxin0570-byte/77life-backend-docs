@@ -85,6 +85,7 @@ export default {
   chapters: [
     {
       id: 'c1',
+      hidden: true,
       title: '供应商',
       summary: '供应商信息、收款码、分销授权与提现',
       steps: [
@@ -146,6 +147,7 @@ export default {
     },
     {
       id: 'c2',
+      hidden: true,
       title: '供应商商品管理',
       summary: '商品筛选、编辑、推广与活动配置',
       steps: [
@@ -217,6 +219,7 @@ export default {
     },
     {
       id: 'c3',
+      hidden: true,
       title: '供应商订单管理',
       summary: '供应商订单筛选、导出与手动分账',
       steps: [
@@ -235,6 +238,7 @@ export default {
     },
     {
       id: 'c4',
+      hidden: true,
       title: '申请供应商',
       summary: '入驻申请列表、资料审核与详情查看',
       steps: [
@@ -272,6 +276,7 @@ export default {
     },
     {
       id: 'c5',
+      hidden: true,
       title: '特卖专区',
       summary: '特卖商品查询、取消活动、二维码与视频',
       steps: [
@@ -301,6 +306,7 @@ export default {
     },
     {
       id: 'c6',
+      hidden: true,
       title: '商户页面设置',
       summary: '附近商家页面的图标、栏目与会场配置',
       steps: [
@@ -346,6 +352,7 @@ export default {
     },
     {
       id: 'c8',
+      hidden: true,
       title: '商家专区商品',
       summary: '专区商品查询、取消活动、二维码与视频',
       steps: [
@@ -374,6 +381,7 @@ export default {
     },
     {
       id: 'c9',
+      hidden: true,
       title: '商户促销',
       summary: '商户促销活动的申请审核列表',
       steps: [
@@ -392,6 +400,7 @@ export default {
     },
     {
       id: 'c10',
+      hidden: true,
       title: '商户投诉',
       summary: '商户投诉列表与处理',
       steps: [
@@ -409,6 +418,7 @@ export default {
     },
     {
       id: 'c11',
+      hidden: true,
       title: '商户申请模板',
       summary: '商户申请字段与上传项的开关配置',
       steps: [
@@ -466,6 +476,7 @@ export default {
     },
     {
       id: 'c13',
+      hidden: true,
       title: '大额支付',
       summary: '大额支付订单查询、筛选与导入导出',
       steps: [

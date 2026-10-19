@@ -5,8 +5,10 @@
       <h1 class="chapter-title">
         {{ chapter.title }}
         <span class="chapter-index">第 {{ chapterIndex + 1 }} 章</span>
+        <span v-if="chapter.hidden" class="badge-hidden">已隐藏</span>
       </h1>
       <p class="chapter-summary">{{ chapter.summary }}</p>
+      <p v-if="chapter.hidden" class="chapter-hidden-tip">该菜单对非最高权限账户隐藏，仅最高权限账户 oooooooo 全量开放；隐藏范围详见「菜单隐藏需求」模块。</p>
     </header>
 
     <!-- 步骤内容 -->
@@ -14,7 +16,7 @@
       <div class="step-head">
         <span class="step-no">{{ chapterIndex + 1 }}.{{ si + 1 }}</span>
         <div class="step-heading">
-          <h2 class="step-title">{{ step.title }}</h2>
+          <h2 class="step-title">{{ step.title }}<span v-if="step.hidden" class="badge-hidden">已隐藏</span></h2>
           <div class="step-menu">
             <span class="step-menu-label">菜单路径</span>
             <code>{{ step.menu }}</code>

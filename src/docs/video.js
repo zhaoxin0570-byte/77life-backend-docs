@@ -106,6 +106,7 @@ export default {
     },
     {
       id: 'c6',
+      hidden: true,
       title: '场景话术',
       summary: '直播场景话术分类（暂未使用）',
       steps: [

@@ -29,7 +29,7 @@
             >
               <span class="row-no">{{ chapterNo(ch) }}</span>
               <span class="row-body">
-                <span class="row-title">{{ ch.title }}</span>
+                <span class="row-title">{{ ch.title }}<span v-if="ch.hidden" class="badge-hidden badge-hidden-sm">已隐藏</span></span>
                 <span class="row-summary">{{ ch.summary }}</span>
                 <span class="row-steps">{{ ch.steps.length }} 步</span>
               </span>

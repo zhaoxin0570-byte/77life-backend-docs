@@ -32,6 +32,7 @@ export default {
   chapters: [
     {
       id: 'c1',
+      hidden: true,
       title: '后台设置',
       summary: '后台短信登录、标题与 Logo 配置',
       steps: [
@@ -77,6 +78,7 @@ export default {
     },
     {
       id: 'c4',
+      hidden: true,
       title: '角色',
       summary: '后台角色列表、权限配置与用户管理权限',
       steps: [

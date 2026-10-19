@@ -52,7 +52,7 @@
                     class="sub-item"
                     :class="{ 'sub-sub': !!g2.name }"
                     active-class="active"
-                  >{{ ch.title }}</router-link>
+                  ><span class="sub-title">{{ ch.title }}</span><span v-if="ch.hidden" class="badge-hidden badge-hidden-sm" title="该菜单对非最高权限账户隐藏">已隐藏</span></router-link>
                 </template>
               </template>
             </div>
