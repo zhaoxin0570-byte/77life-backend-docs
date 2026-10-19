@@ -98,7 +98,6 @@ export default {
   },
   {
     id: 'member',
-    hidden: true,
     title: '会员管理',
     summary: '会员查询、详情与数据编辑',
     steps: [
@@ -287,7 +286,6 @@ export default {
     },
     {
       id: 'c2',
-      hidden: true,
       title: '站内信',
       summary: '所有用户站内信查看与编辑',
       steps: [
@@ -303,7 +301,6 @@ export default {
     },
     {
       id: 'c3',
-      hidden: true,
       title: 'app推送',
       summary: 'APP 推送新增与状态管理（暂未用）',
       steps: [
@@ -319,7 +316,6 @@ export default {
     },
     {
       id: 'c4',
-      hidden: true,
       title: '用户反馈',
       summary: '反馈查看、标记与回复',
       steps: [
@@ -335,7 +331,6 @@ export default {
     },
     {
       id: 'c5',
-      hidden: true,
       title: '活动信息',
       summary: '活动消息发布与定向发送',
       steps: [
@@ -351,7 +346,6 @@ export default {
     },
     {
       id: 'c6',
-      hidden: true,
       title: '充值',
       summary: '充值记录与按支付状态筛选',
       steps: [
@@ -378,7 +372,6 @@ export default {
     },
     {
       id: 'c7',
-      hidden: true,
       title: '用户导入',
       summary: '上传 Excel 导入客户资料',
       steps: [
@@ -402,7 +395,6 @@ export default {
     },
     {
       id: 'c8',
-      hidden: true,
       title: '消息模板',
       summary: '按消息类型编辑模板与发送开关',
       steps: [
@@ -418,7 +410,6 @@ export default {
     },
     {
       id: 'c9',
-      hidden: true,
       title: '会员管理2',
       summary: '会员管理2 列表（暂未开通）',
       steps: [
@@ -434,7 +425,6 @@ export default {
     },
     {
       id: 'c10',
-      hidden: true,
       title: '会员管理3',
       summary: '会员管理3 列表（仅服务代表）',
       steps: [
@@ -539,7 +529,6 @@ export default {
     },
     {
       id: 'c16',
-      hidden: true,
       title: '提现',
       summary: '跳转到审核通道的用户提现',
       steps: [

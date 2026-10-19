@@ -488,7 +488,6 @@ export default {
     },
     {
       id: 'c3',
-      hidden: true,
       title: '通用设置',
       summary: '通用开关与比例限额配置',
       steps: [
@@ -530,7 +529,6 @@ export default {
     },
     {
       id: 'c5',
-      hidden: true,
       title: '商家奖励设置',
       summary: '推荐下单的贡献值奖励比例',
       steps: [
@@ -549,7 +547,6 @@ export default {
     },
     {
       id: 'c6',
-      hidden: true,
       title: '分红设置',
       summary: '分红池释放与手续费比例',
       steps: [
@@ -565,7 +562,6 @@ export default {
     },
     {
       id: 'c7',
-      hidden: true,
       title: '分红比例设置',
       summary: '按额度区间设释放比例（已停用）',
       steps: [
@@ -581,7 +577,6 @@ export default {
     },
     {
       id: 'c8',
-      hidden: true,
       title: '其他设置',
       summary: '贡献值转换等杂项设置',
       steps: [
@@ -600,7 +595,6 @@ export default {
     },
     {
       id: 'c9',
-      hidden: true,
       title: '广告奖励设置',
       summary: '签到页广告提示与开关（暂未使用）',
       steps: [
@@ -616,7 +610,6 @@ export default {
     },
     {
       id: 'c10',
-      hidden: true,
       title: '广告列表',
       summary: '添加广告项与奖励账户',
       steps: [
@@ -632,7 +625,6 @@ export default {
     },
     {
       id: 'c11',
-      hidden: true,
       title: '文字设置',
       summary: 'APP 文字说明与颜色字号',
       steps: [
@@ -648,7 +640,6 @@ export default {
     },
     {
       id: 'c12',
-      hidden: true,
       title: '红包增值比例设置',
       summary: '按额度区间设红包增值比例（暂未使用）',
       steps: [

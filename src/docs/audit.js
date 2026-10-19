@@ -40,7 +40,6 @@ export default {
   chapters: [
     {
       id: 'c1',
-      hidden: true,
       title: '用户提现',
       summary: '提现申请列表筛选、详情审核与状态统计',
       steps: [
@@ -98,7 +97,6 @@ export default {
     },
     {
       id: 'c2',
-      hidden: true,
       title: '便捷通道',
       summary: '订单筛选导出、导入运单、奖金审核与订单详情',
       steps: [

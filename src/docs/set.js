@@ -224,7 +224,6 @@ export default {
     },
     {
       id: 'c2',
-      hidden: true,
       title: '店铺设置',
       summary: '全站基础信息与开关配置',
       steps: [
@@ -244,7 +243,6 @@ export default {
     },
     {
       id: 'c3',
-      hidden: true,
       title: '购物设置',
       summary: '自动确认收货、删除未支付订单与售后退货规则',
       steps: [
@@ -263,7 +261,6 @@ export default {
     },
     {
       id: 'c4',
-      hidden: true,
       title: '提现设置',
       summary: '提现开关、额度、手续费与定时提现',
       steps: [
@@ -283,7 +280,6 @@ export default {
     },
     {
       id: 'c5',
-      hidden: true,
       title: '互转设置',
       summary: '互转开关、手续费、支持账户与转换倍数',
       steps: [
@@ -302,7 +298,6 @@ export default {
     },
     {
       id: 'c6',
-      hidden: true,
       title: '支付设置',
       summary: '支付通道的排序、开通控制与支付配置',
       steps: [
@@ -345,7 +340,6 @@ export default {
         },
         {
           id: 'c7-s2',
-          hidden: true,
           title: '会员商品首页模板',
           menu: '设置 → 页面设置 → 会员商品首页模板',
           desc: '进入「设置 → 页面设置 → 会员商品首页模板」，中间为手机预览，右侧编辑框配置标题、标题 logo、背景图片与背景颜色。',
@@ -358,7 +352,6 @@ export default {
         },
         {
           id: 'c7-s3',
-          hidden: true,
           title: '会员中心模板（整体配置）',
           menu: '设置 → 页面设置 → 会员中心模板',
           desc: '进入「设置 → 页面设置 → 会员中心模板」配置 app「我的」页面：左侧选择适用等级，中间实时预览，右侧勾选顶部背景、我的订单、会员工具等模块，底部「保存」。',
@@ -428,7 +421,6 @@ export default {
     },
     {
       id: 'c9',
-      hidden: true,
       title: '广告设置',
       summary: '广告/幻灯片的排序与新增编辑',
       steps: [

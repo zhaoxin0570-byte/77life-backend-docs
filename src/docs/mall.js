@@ -46,7 +46,6 @@ export default {
     },
     {
       id: 'c2',
-      hidden: true,
       title: '会员商品',
       summary: '会员专享商品筛选与上下架管理',
       steps: [
@@ -62,7 +61,6 @@ export default {
     },
     {
       id: 'c3',
-      hidden: true,
       title: '积分兑换商品',
       summary: '积分兑换商品筛选与兑换数值编辑',
       steps: [
@@ -186,7 +184,6 @@ export default {
     },
     {
       id: 'c8',
-      hidden: true,
       title: '红包',
       summary: '红包类型的添加配置（不在使用）',
       steps: [
@@ -202,7 +199,6 @@ export default {
     },
     {
       id: 'c9',
-      hidden: true,
       title: '红包发放',
       summary: '红包发放记录查询与发放（不在使用）',
       steps: [

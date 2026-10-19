@@ -62,7 +62,6 @@ export default {
     },
     {
       id: 'fund',
-      hidden: true,
       title: '资金流水',
       summary: '全平台账户资金变动明细查询',
       steps: [
@@ -105,7 +104,6 @@ export default {
     },
     {
       id: 'refund',
-      hidden: true,
       title: '退款记录',
       summary: '第三方支付后退款成功的记录查询',
       steps: [
@@ -147,7 +145,6 @@ export default {
     },
     {
       id: 'report',
-      hidden: true,
       title: '财务报表',
       summary: '按日期汇总各资金账户的增减统计',
       steps: [
@@ -163,7 +160,6 @@ export default {
     },
     {
       id: 'data-view',
-      hidden: true,
       title: '数据查看',
       summary: '按地区逐级下钻查看让利金额',
       steps: [
