@@ -32,6 +32,15 @@
       </div>
     </div>
 
+    <!-- 受限视图提示 -->
+    <div class="panel access-notice" v-if="isRestricted">
+      <span class="notice-icon">🔒</span>
+      <div>
+        <div class="notice-title">受限视图</div>
+        <p class="notice-desc">当前账户（{{ authState.user ? authState.user.name : '' }}）仅可查看被授权的文档内容，其余模块已隐藏。如需开通更多权限，请联系管理员。</p>
+      </div>
+    </div>
+
     <!-- 模块进度表 -->
     <div class="table-card">
       <div class="panel-title" style="margin-bottom: 14px;">模块文档进度</div>
@@ -61,6 +70,7 @@
           </tr>
         </tbody>
       </table>
+      <p v-if="!modules.length" style="margin: 16px 0 0; font-size: 13px; color: #909399;">当前账户没有可查看的文档模块，请联系管理员开通权限。</p>
     </div>
 
     <!-- 说明卡片 -->
@@ -75,12 +85,31 @@
 </template>
 
 <script>
-import { modules, docStats } from '@/docs'
+import { modules, computeStats } from '@/docs'
+import { filterModules, isRestrictedScope } from '@/docs/access'
+import { authState } from '@/docs/auth'
 
 export default {
   name: 'DocHome',
   data() {
-    return { modules, stats: docStats }
+    return { authState }
+  },
+  computed: {
+    // 当前用户可见范围（后台注入；null=全量）
+    currentScope() {
+      return authState.user ? authState.user.scope : null
+    },
+    // 按可见范围过滤后的模块列表
+    modules() {
+      return filterModules(modules, this.currentScope)
+    },
+    // 统计随可见范围联动
+    stats() {
+      return computeStats(this.modules)
+    },
+    isRestricted() {
+      return isRestrictedScope(this.currentScope)
+    }
   }
 }
 </script>

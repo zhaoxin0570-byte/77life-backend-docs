@@ -58,6 +58,13 @@
     </nav>
   </div>
 
+  <div class="doc-empty" v-else-if="!hasAccess">
+    <div class="empty-icon">🔒</div>
+    <h2>无权查看该内容</h2>
+    <p>当前账户（{{ authState.user ? authState.user.name : '' }}）没有访问该文档的权限，如需开通请联系管理员。</p>
+    <router-link to="/">返回文档首页</router-link>
+  </div>
+
   <div class="doc-empty" v-else>
     <p>章节不存在</p>
     <router-link to="/">返回文档首页</router-link>
@@ -71,12 +78,14 @@
 </template>
 
 <script>
-import { getModule, allChapters } from '@/docs'
+import { modules, getModule } from '@/docs'
+import { canAccessChapter, filterModules } from '@/docs/access'
+import { authState } from '@/docs/auth'
 
 export default {
   name: 'DocChapter',
   data() {
-    return { lightboxImg: null }
+    return { lightboxImg: null, authState, allModules: modules }
   },
   mounted() {
     document.addEventListener('keydown', this.onKeydown)
@@ -85,29 +94,50 @@ export default {
     document.removeEventListener('keydown', this.onKeydown)
   },
   computed: {
+    currentScope() {
+      return authState.user ? authState.user.scope : null
+    },
+    // 当前用户可见的章节（按可见范围过滤，避免上一节/下一节泄露隐藏内容）
+    visibleChapters() {
+      const visibleModules = filterModules(this.allModules, this.currentScope)
+      return visibleModules.flatMap(m =>
+        m.chapters.map(ch => ({ ...ch, moduleId: m.id, moduleName: m.name }))
+      )
+    },
     module() {
-      return getModule(this.$route.params.moduleId) || { chapters: [] }
+      const m = getModule(this.$route.params.moduleId)
+      if (!m || !canAccessChapter(this.currentScope, m.id, this.$route.params.chapterId)) {
+        return { chapters: [] }
+      }
+      return filterModules([m], this.currentScope)[0] || { chapters: [] }
     },
     chapter() {
       const { moduleId, chapterId } = this.$route.params
-      const m = getModule(moduleId)
-      return (m && m.chapters.find(c => c.id === chapterId)) || null
+      const m = this.module
+      return (m.chapters.length && m.chapters.find(c => c.id === chapterId)) || null
+    },
+    hasAccess() {
+      return canAccessChapter(
+        this.currentScope,
+        this.$route.params.moduleId,
+        this.$route.params.chapterId
+      )
     },
     chapterIndex() {
       return this.module.chapters.findIndex(c => c.id === this.$route.params.chapterId)
     },
     flatIndex() {
       const { moduleId, chapterId } = this.$route.params
-      return allChapters().findIndex(c => c.moduleId === moduleId && c.id === chapterId)
+      return this.visibleChapters.findIndex(c => c.moduleId === moduleId && c.id === chapterId)
     },
     prev() {
       const i = this.flatIndex
-      const list = allChapters()
+      const list = this.visibleChapters
       return i > 0 ? list[i - 1] : null
     },
     next() {
       const i = this.flatIndex
-      const list = allChapters()
+      const list = this.visibleChapters
       return i >= 0 && i < list.length - 1 ? list[i + 1] : null
     }
   },

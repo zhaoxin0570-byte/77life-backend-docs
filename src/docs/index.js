@@ -105,16 +105,42 @@ const MODULE_GROUP_OVERRIDES = {
 
 const MODULE_GROUP_ORDER = ['操作流程', '功能说明', '参考资料', '框架待补']
 
-export const moduleGroups = (() => {
+// 由模块列表构建一级分类（供权限过滤后的列表复用）
+export function buildModuleGroups(moduleList) {
   const statusName = { active: '操作流程', reference: '参考资料', planned: '框架待补' }
   const map = {}
-  modules.forEach(m => {
+  ;(moduleList || []).forEach(m => {
     const name = MODULE_GROUP_OVERRIDES[m.id] || statusName[m.status] || '参考资料'
     if (!map[name]) map[name] = { name, modules: [] }
     map[name].modules.push(m)
   })
   return MODULE_GROUP_ORDER.filter(n => map[n]).map(n => map[n])
-})()
+}
+
+export const moduleGroups = buildModuleGroups(modules)
+
+// 统计（供权限过滤后的列表复用）
+export function computeStats(moduleList) {
+  let steps = 0
+  let images = 0
+  ;(moduleList || []).forEach(m =>
+    m.chapters.forEach(ch => {
+      ;(ch.steps || []).forEach(s => {
+        steps++
+        images += (s.images || []).length
+      })
+    })
+  )
+  return {
+    modules: moduleList.length,
+    active: moduleList.filter(m => m.status === 'active').length,
+    reference: moduleList.filter(m => m.status === 'reference').length,
+    planned: moduleList.filter(m => m.status === 'planned').length,
+    chapters: moduleList.reduce((n, m) => n + m.chapters.length, 0),
+    steps,
+    images
+  }
+}
 
 export function getModule(moduleId) {
   return modules.find(m => m.id === moduleId) || null

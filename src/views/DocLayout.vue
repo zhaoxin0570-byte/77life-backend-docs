@@ -20,7 +20,7 @@
             <a @click="collapseAll">收起</a>
           </span>
         </div>
-        <template v-for="(g, gi) in moduleGroups" :key="g.name">
+        <template v-for="(g, gi) in visibleGroups" :key="g.name">
           <div class="menu-category-title">{{ g.name }}</div>
           <div class="menu-block" v-for="m in g.modules" :key="m.id">
             <!-- 一级：模块（点整行展开/收起二级分类；无章节的模块点整行进入概览） -->
@@ -59,7 +59,23 @@
           </div>
         </template>
       </nav>
-      <div class="sidebar-footer">{{ systemMeta.version }} · {{ systemMeta.updatedAt }}</div>
+      <div class="sidebar-footer">
+        <div class="auth-line">
+          <span class="auth-dot" :class="{ restricted: isRestricted }"></span>
+          <span class="auth-name">{{ authState.user ? authState.user.name : '…' }}</span>
+          <span v-if="isRestricted" class="auth-scope">受限视图</span>
+        </div>
+        <select
+          v-if="authState.simulated"
+          class="role-switch"
+          :value="currentPresetId"
+          @change="switchPreset"
+          title="演示：切换可见范围（对接后台后自动隐藏）"
+        >
+          <option v-for="p in DEV_SCOPE_PRESETS" :key="p.id" :value="p.id">{{ p.name }}</option>
+        </select>
+        <div class="sys-meta">{{ systemMeta.version }} · {{ systemMeta.updatedAt }}</div>
+      </div>
     </aside>
 
     <!-- 右侧：内容区 -->
@@ -85,17 +101,44 @@
 </template>
 
 <script>
-import { modules, moduleGroups, systemMeta, getModule, chapterGroups } from '@/docs'
+import { modules, buildModuleGroups, systemMeta, getModule, chapterGroups } from '@/docs'
+import { filterModules, isRestrictedScope, DEV_SCOPE_PRESETS } from '@/docs/access'
+import { authState, setSimulatedPreset } from '@/docs/auth'
 import { iconSvg } from '@/docs/icons'
 
 export default {
   name: 'DocLayout',
   data() {
-    return { modules, moduleGroups, systemMeta, expanded: {}, expandedGroups: {} }
+    return { modules, authState, DEV_SCOPE_PRESETS, systemMeta, expanded: {}, expandedGroups: {} }
   },
   computed: {
+    // 当前用户可见范围（后台注入；null=全量）
+    currentScope() {
+      return authState.user ? authState.user.scope : null
+    },
+    // 按可见范围过滤后的模块列表
+    visibleModules() {
+      return filterModules(modules, this.currentScope)
+    },
+    // 过滤后的一级分类
+    visibleGroups() {
+      return buildModuleGroups(this.visibleModules)
+    },
+    isRestricted() {
+      return isRestrictedScope(this.currentScope)
+    },
+    // 当前演示预设 ID（用于下拉框回显）
+    currentPresetId() {
+      const scope = this.currentScope
+      if (!scope) return 'full'
+      const hit = DEV_SCOPE_PRESETS.find(p => JSON.stringify(p.scope) === JSON.stringify(scope))
+      return hit ? hit.id : 'full'
+    },
+    // 面包屑：仅当前用户可见的模块才显示（无权访问时不展示归属）
     currentModule() {
-      return getModule(this.$route.params.moduleId)
+      const m = getModule(this.$route.params.moduleId)
+      if (!m) return null
+      return this.visibleModules.find(vm => vm.id === m.id) || null
     },
     currentChapter() {
       const m = this.currentModule
@@ -113,6 +156,10 @@ export default {
   },
   methods: {
     iconSvg,
+    // 切换演示预设（开发/演示用，对接后台后不显示）
+    switchPreset(e) {
+      setSimulatedPreset(e.target.value)
+    },
     isExpanded(id) {
       return !!this.expanded[id]
     },

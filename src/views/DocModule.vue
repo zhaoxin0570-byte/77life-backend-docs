@@ -47,6 +47,13 @@
       </section>
     </div>
 
+    <div class="doc-empty" v-else-if="!hasAccess">
+      <div class="empty-icon">🔒</div>
+      <h2>无权查看该模块</h2>
+      <p>当前账户（{{ authState.user ? authState.user.name : '' }}）没有访问该文档模块的权限，如需开通请联系管理员。</p>
+      <router-link to="/">返回文档首页</router-link>
+    </div>
+
     <div class="doc-empty" v-else>
       <p>模块不存在</p>
       <router-link to="/">返回文档首页</router-link>
@@ -56,12 +63,27 @@
 
 <script>
 import { getModule, chapterGroups } from '@/docs'
+import { canAccessModule, filterModules } from '@/docs/access'
+import { authState } from '@/docs/auth'
 
 export default {
   name: 'DocModule',
+  data() {
+    return { authState }
+  },
   computed: {
+    currentScope() {
+      return authState.user ? authState.user.scope : null
+    },
     module() {
-      return getModule(this.$route.params.moduleId)
+      const m = getModule(this.$route.params.moduleId)
+      if (!m) return null
+      if (!canAccessModule(this.currentScope, m.id)) return null
+      // 按可见范围过滤模块内的章节/步骤
+      return filterModules([m], this.currentScope)[0] || null
+    },
+    hasAccess() {
+      return canAccessModule(this.currentScope, this.$route.params.moduleId)
     }
   },
   methods: {
